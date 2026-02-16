@@ -1,0 +1,1913 @@
+mlops-airflow-worker-worker-9cddf7797-8tsqg
+*** Found logs in s3:
+***   * s3://af-logs/prod/dag_id=fit-the-look/run_id=scheduled__2026-02-15T07:00:00+00:00/task_id=run/attempt=6.log
+[2026-02-16T14:37:10.651+0300] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fit-the-look.run scheduled__2026-02-15T07:00:00+00:00 [queued]>
+[2026-02-16T14:37:10.663+0300] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fit-the-look.run scheduled__2026-02-15T07:00:00+00:00 [queued]>
+[2026-02-16T14:37:10.663+0300] {taskinstance.py:1361} INFO - Starting attempt 6 of 6
+[2026-02-16T14:37:10.680+0300] {taskinstance.py:1382} INFO - Executing <Task(MLOpsKubernetesPodOperator): run> on 2026-02-15 07:00:00+00:00
+[2026-02-16T14:37:10.688+0300] {standard_task_runner.py:57} INFO - Started process 40563 to run task
+[2026-02-16T14:37:10.691+0300] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fit-the-look', 'run', 'scheduled__2026-02-15T07:00:00+00:00', '--job-id', '4989347', '--raw', '--subdir', 'DAGS_FOLDER/fit-the-look/dags/fit_the_look_dag.py', '--cfg-path', '/tmp/tmpsoxi6xiu']
+[2026-02-16T14:37:10.691+0300] {standard_task_runner.py:85} INFO - Job 4989347: Subtask run
+[2026-02-16T14:37:10.775+0300] {task_command.py:416} INFO - Running <TaskInstance: fit-the-look.run scheduled__2026-02-15T07:00:00+00:00 [running]> on host mlops-airflow-worker-worker-9cddf7797-8tsqg
+[2026-02-16T14:37:10.926+0300] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='fit-the-look' AIRFLOW_CTX_TASK_ID='run' AIRFLOW_CTX_EXECUTION_DATE='2026-02-15T07:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='6' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-15T07:00:00+00:00'
+[2026-02-16T14:37:10.929+0300] {pod.py:395} INFO - Starting task=`run`, with image=`harbor.wildberries.ru/recommendation/recommendation/recsys-lab/fit-the-look/fit-the-look:v0-0-2-bff12b7d`
+[2026-02-16T14:37:10.929+0300] {__init__.py:124} INFO - MUTATION_PLUGIN: dag_tags=['recommendation', 'recsys-lab', 'team=recsys-lab'] for task fit-the-look.run on cluster=k8s.ml-infra-xc
+[2026-02-16T14:37:10.929+0300] {__init__.py:170} INFO - MUTATION_PLUGIN: no affinity/priority rules for cluster=k8s.ml-infra-xc (task fit-the-look.run)
+[2026-02-16T14:37:10.959+0300] {pod.py:926} INFO - Building pod fit-the-look-run-bt4vxj60 with labels: {'dag_id': 'fit-the-look', 'task_id': 'run', 'run_id': 'scheduled__2026-02-15T0700000000-b4547cc1f', 'kubernetes_pod_operator': 'True', 'try_number': '6'}
+[2026-02-16T14:37:11.301+0300] {pod.py:490} INFO - Found matching pod fit-the-look-run-bt4vxj60 with labels {'airflow_kpo_in_cluster': 'True', 'airflow_version': '2.7.3', 'dag_id': 'fit-the-look', 'kubernetes_pod_operator': 'True', 'run_id': 'scheduled__2026-02-15T0700000000-b4547cc1f', 'task_id': 'run', 'try_number': '6'}
+[2026-02-16T14:37:11.301+0300] {pod.py:491} INFO - `try_number` of task_instance: 6
+[2026-02-16T14:37:11.301+0300] {pod.py:492} INFO - `try_number` of pod: 6
+[2026-02-16T14:37:11.309+0300] {pod_manager.py:359} WARNING - Pod not yet started: fit-the-look-run-bt4vxj60
+[2026-02-16T14:37:12.318+0300] {pod_manager.py:359} WARNING - Pod not yet started: fit-the-look-run-bt4vxj60
+[2026-02-16T14:37:13.327+0300] {pod_manager.py:359} WARNING - Pod not yet started: fit-the-look-run-bt4vxj60
+[2026-02-16T14:37:14.337+0300] {pod_manager.py:359} WARNING - Pod not yet started: fit-the-look-run-bt4vxj60
+[2026-02-16T14:37:15.382+0300] {pod_manager.py:447} INFO - [base] poetry run python3 -m run.ftl.run_pipeline
+[2026-02-16T14:37:15.382+0300] {pod_manager.py:447} INFO - [base] Skipping virtualenv creation, as specified in config file.
+[2026-02-16T14:37:15.382+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:37:14 | faiss.loader | INFO | Loading faiss with AVX2 support.
+[2026-02-16T14:37:21.695+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:37:14 | faiss.loader | INFO | Successfully loaded faiss with AVX2 support.
+[2026-02-16T14:37:21.696+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:37:21 | common.run_config_loader | INFO | ============================================================
+[2026-02-16T14:37:21.696+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:37:21 | common.run_config_loader | INFO | FTL_ENV: prod
+[2026-02-16T14:37:21.697+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:37:21 | common.run_config_loader | INFO | S3_BASE_PATH: s3://recsys-lab/ftl
+[2026-02-16T14:37:21.697+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:37:21 | common.run_config_loader | INFO | METRICS_TABLE: recsyslab_stg.ftl_tech_metrics
+[2026-02-16T14:37:21.697+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:37:21 | common.run_config_loader | INFO | ============================================================
+[2026-02-16T14:37:21.699+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:37:21 | run.ftl.run_top_nm_load | INFO | SQL‑файл: /app/sql/items_query.sql
+[2026-02-16T14:37:21.700+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:37:21 | run.ftl.run_top_nm_load | INFO | Используем time_key=2026-02-16 (END_DATE=2026-02-16)
+[2026-02-16T14:42:21.800+0300] {pod_manager.py:460} INFO - [base] 2026-02-16 14:37:21 | run.ftl.run_top_nm_load | INFO | Читаем данные из Greenplum
+[2026-02-16T14:47:22.936+0300] {pod_manager.py:460} INFO - [base] None
+[2026-02-16T14:49:34.367+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:49:31 | run.ftl.run_top_nm_load | INFO | items_df: shape=(2127467, 16)
+[2026-02-16T14:49:34.371+0300] {pod_manager.py:447} INFO - [base] 
+ftl/time_key_2026-02-16/top_fashion_nms.parquet:   0%|          | 0.00/14.5M [00:00<?, ?B/s]
+ftl/time_key_2026-02-16/top_fashion_nms.parquet:  72%|███████▏  | 10.5M/14.5M [00:00<00:00, 68.2MB/s]
+ftl/time_key_2026-02-16/top_fashion_nms.parquet: 100%|██████████| 14.5M/14.5M [00:00<00:00, 15.1MB/s]
+[2026-02-16T14:49:36.012+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:49:34 | run.ftl.run_top_nm_load | INFO | top_fashion сохранён → s3://recsys-lab/ftl/time_key_2026-02-16/top_fashion_nms.parquet  (shape=(1567683, 6))
+[2026-02-16T14:49:36.013+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:49:36 | common.run_config_loader | INFO | ============================================================
+[2026-02-16T14:49:36.013+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:49:36 | common.run_config_loader | INFO | FTL_ENV: prod
+[2026-02-16T14:49:36.013+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:49:36 | common.run_config_loader | INFO | S3_BASE_PATH: s3://recsys-lab/ftl
+[2026-02-16T14:49:36.013+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:49:36 | common.run_config_loader | INFO | METRICS_TABLE: recsyslab_stg.ftl_tech_metrics
+[2026-02-16T14:49:36.013+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:49:36 | common.run_config_loader | INFO | ============================================================
+[2026-02-16T14:49:36.636+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 14:49:36 | run.ftl.run_top_nm_image_embeds | INFO | читаем top_fashion_nms из s3://recsys-lab/ftl/time_key_2026-02-16/top_fashion_nms.parquet
+[2026-02-16T14:54:36.737+0300] {pod_manager.py:460} INFO - [base] 2026-02-16 14:49:36 | run.ftl.run_top_nm_image_embeds | INFO | загружаем даты обновления картинок из Greenplum
+[2026-02-16T14:59:37.876+0300] {pod_manager.py:460} INFO - [base] None
+[2026-02-16T15:04:39.020+0300] {pod_manager.py:460} INFO - [base] None
+[2026-02-16T15:09:40.164+0300] {pod_manager.py:460} INFO - [base] None
+[2026-02-16T15:14:41.298+0300] {pod_manager.py:460} INFO - [base] None
+[2026-02-16T15:19:42.432+0300] {pod_manager.py:460} INFO - [base] None
+[2026-02-16T15:21:52.545+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:21:27 | run.ftl.run_top_nm_image_embeds | INFO | загружено 683977971 записей с датами обновления картинок
+[2026-02-16T15:22:16.309+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:21:52 | run.ftl.run_top_nm_image_embeds | INFO | после фильтрации NaT: 683977971 записей с валидными датами
+[2026-02-16T15:22:16.310+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:22:16 | run.ftl.run_top_nm_image_embeds | INFO | из них 1559513 относятся к текущему top_fashion списку
+[2026-02-16T15:22:49.735+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:22:16 | run.ftl.run_top_nm_image_embeds | INFO | читаем уже посчитанные эмбеддинги из s3://recsys-lab/ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet
+[2026-02-16T15:23:45.717+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:22:49 | run.ftl.run_top_nm_image_embeds | INFO | дорасчет: 1030 новых товаров + 1983 с обновленными картинками = 3013 итого
+[2026-02-16T15:25:08.675+0300] {pod_manager.py:447} INFO - [base] 
+embeddings:   0%|          | 0/95 [00:00<?, ?chunk/s]
+embeddings:   1%|          | 1/95 [00:00<00:54,  1.73chunk/s]
+embeddings:   2%|▏         | 2/95 [00:01<00:59,  1.56chunk/s]
+embeddings:   3%|▎         | 3/95 [00:02<01:05,  1.40chunk/s]
+embeddings:   4%|▍         | 4/95 [00:02<00:57,  1.57chunk/s]
+embeddings:   5%|▌         | 5/95 [00:03<00:57,  1.57chunk/s]
+embeddings:   6%|▋         | 6/95 [00:03<00:49,  1.81chunk/s]
+embeddings:   7%|▋         | 7/95 [00:04<00:49,  1.79chunk/s]
+embeddings:   8%|▊         | 8/95 [00:04<00:52,  1.65chunk/s]
+embeddings:   9%|▉         | 9/95 [00:05<00:49,  1.75chunk/s]
+embeddings:  11%|█         | 10/95 [00:05<00:46,  1.82chunk/s]
+embeddings:  12%|█▏        | 11/95 [00:06<00:50,  1.67chunk/s]
+embeddings:  13%|█▎        | 12/95 [00:07<00:46,  1.77chunk/s]
+embeddings:  14%|█▎        | 13/95 [00:07<00:46,  1.75chunk/s]
+embeddings:  15%|█▍        | 14/95 [00:08<00:44,  1.83chunk/s]
+embeddings:  16%|█▌        | 15/95 [00:08<00:43,  1.83chunk/s]
+embeddings:  17%|█▋        | 16/95 [00:09<00:48,  1.62chunk/s]
+embeddings:  18%|█▊        | 17/95 [00:10<00:47,  1.65chunk/s]
+embeddings:  19%|█▉        | 18/95 [00:10<00:43,  1.78chunk/s]
+embeddings:  20%|██        | 19/95 [00:11<00:41,  1.83chunk/s]
+embeddings:  21%|██        | 20/95 [00:11<00:40,  1.83chunk/s]
+embeddings:  22%|██▏       | 21/95 [00:14<01:23,  1.13s/chunk]
+embeddings:  23%|██▎       | 22/95 [00:14<01:05,  1.12chunk/s]
+embeddings:  24%|██▍       | 23/95 [00:14<00:55,  1.29chunk/s]
+embeddings:  25%|██▌       | 24/95 [00:15<00:52,  1.36chunk/s]
+embeddings:  26%|██▋       | 25/95 [00:16<00:48,  1.45chunk/s]
+embeddings:  27%|██▋       | 26/95 [00:16<00:44,  1.54chunk/s]
+embeddings:  28%|██▊       | 27/95 [00:17<00:44,  1.51chunk/s]
+embeddings:  29%|██▉       | 28/95 [00:17<00:41,  1.60chunk/s]
+embeddings:  31%|███       | 29/95 [00:18<00:38,  1.72chunk/s]
+embeddings:  32%|███▏      | 30/95 [00:19<00:39,  1.67chunk/s]
+embeddings:  33%|███▎      | 31/95 [00:19<00:37,  1.71chunk/s]
+embeddings:  34%|███▎      | 32/95 [00:20<00:40,  1.54chunk/s]
+embeddings:  35%|███▍      | 33/95 [00:21<00:39,  1.55chunk/s]
+embeddings:  36%|███▌      | 34/95 [00:21<00:37,  1.65chunk/s]
+embeddings:  37%|███▋      | 35/95 [00:21<00:33,  1.79chunk/s]
+embeddings:  38%|███▊      | 36/95 [00:22<00:31,  1.89chunk/s]
+embeddings:  39%|███▉      | 37/95 [00:23<00:32,  1.77chunk/s]
+embeddings:  40%|████      | 38/95 [00:23<00:34,  1.68chunk/s]
+embeddings:  41%|████      | 39/95 [00:24<00:35,  1.56chunk/s]
+embeddings:  42%|████▏     | 40/95 [00:25<00:32,  1.67chunk/s]
+embeddings:  43%|████▎     | 41/95 [00:25<00:32,  1.68chunk/s]
+embeddings:  44%|████▍     | 42/95 [00:26<00:32,  1.65chunk/s]
+embeddings:  45%|████▌     | 43/95 [00:27<00:34,  1.49chunk/s]
+embeddings:  46%|████▋     | 44/95 [00:27<00:33,  1.51chunk/s]
+embeddings:  47%|████▋     | 45/95 [00:28<00:31,  1.58chunk/s]
+embeddings:  48%|████▊     | 46/95 [00:28<00:30,  1.58chunk/s]
+embeddings:  49%|████▉     | 47/95 [00:29<00:31,  1.54chunk/s]
+embeddings:  51%|█████     | 48/95 [00:30<00:30,  1.53chunk/s]
+embeddings:  52%|█████▏    | 49/95 [00:30<00:27,  1.66chunk/s]
+embeddings:  53%|█████▎    | 50/95 [00:31<00:27,  1.66chunk/s]
+embeddings:  54%|█████▎    | 51/95 [00:31<00:24,  1.78chunk/s]
+embeddings:  55%|█████▍    | 52/95 [00:32<00:26,  1.65chunk/s]
+embeddings:  56%|█████▌    | 53/95 [00:33<00:24,  1.73chunk/s]
+embeddings:  57%|█████▋    | 54/95 [00:33<00:23,  1.73chunk/s]
+embeddings:  58%|█████▊    | 55/95 [00:34<00:21,  1.86chunk/s]
+embeddings:  59%|█████▉    | 56/95 [00:34<00:22,  1.77chunk/s]
+embeddings:  60%|██████    | 57/95 [00:35<00:21,  1.76chunk/s]
+embeddings:  61%|██████    | 58/95 [00:35<00:19,  1.90chunk/s]
+embeddings:  62%|██████▏   | 59/95 [00:36<00:19,  1.81chunk/s]
+embeddings:  63%|██████▎   | 60/95 [00:36<00:19,  1.76chunk/s]
+embeddings:  64%|██████▍   | 61/95 [00:37<00:18,  1.82chunk/s]
+embeddings:  65%|██████▌   | 62/95 [00:38<00:20,  1.65chunk/s]
+embeddings:  66%|██████▋   | 63/95 [00:38<00:19,  1.62chunk/s]
+embeddings:  67%|██████▋   | 64/95 [00:39<00:17,  1.78chunk/s]
+embeddings:  68%|██████▊   | 65/95 [00:39<00:15,  1.91chunk/s]
+embeddings:  69%|██████▉   | 66/95 [00:40<00:15,  1.87chunk/s]
+embeddings:  71%|███████   | 67/95 [00:40<00:14,  1.97chunk/s]
+embeddings:  72%|███████▏  | 68/95 [00:41<00:15,  1.78chunk/s]
+embeddings:  73%|███████▎  | 69/95 [00:41<00:14,  1.83chunk/s]
+embeddings:  74%|███████▎  | 70/95 [00:42<00:13,  1.81chunk/s]
+embeddings:  75%|███████▍  | 71/95 [00:42<00:12,  1.88chunk/s]
+embeddings:  76%|███████▌  | 72/95 [00:43<00:13,  1.74chunk/s]
+embeddings:  77%|███████▋  | 73/95 [00:44<00:12,  1.71chunk/s]
+embeddings:  78%|███████▊  | 74/95 [00:44<00:11,  1.80chunk/s]
+embeddings:  79%|███████▉  | 75/95 [00:45<00:11,  1.73chunk/s]
+embeddings:  80%|████████  | 76/95 [00:45<00:11,  1.67chunk/s]
+embeddings:  81%|████████  | 77/95 [00:46<00:10,  1.64chunk/s]
+embeddings:  82%|████████▏ | 78/95 [00:47<00:09,  1.74chunk/s]
+embeddings:  83%|████████▎ | 79/95 [00:47<00:08,  1.79chunk/s]
+embeddings:  84%|████████▍ | 80/95 [00:48<00:08,  1.84chunk/s]
+embeddings:  85%|████████▌ | 81/95 [00:48<00:07,  1.96chunk/s]
+embeddings:  86%|████████▋ | 82/95 [00:49<00:07,  1.81chunk/s]
+embeddings:  87%|████████▋ | 83/95 [00:49<00:06,  1.73chunk/s]
+embeddings:  88%|████████▊ | 84/95 [00:50<00:06,  1.83chunk/s]
+embeddings:  89%|████████▉ | 85/95 [00:50<00:05,  1.95chunk/s]
+embeddings:  91%|█████████ | 86/95 [00:51<00:05,  1.74chunk/s]
+embeddings:  92%|█████████▏| 87/95 [00:51<00:04,  1.80chunk/s]
+embeddings:  93%|█████████▎| 88/95 [00:52<00:03,  1.84chunk/s]
+embeddings:  94%|█████████▎| 89/95 [00:53<00:03,  1.82chunk/s]
+embeddings:  95%|█████████▍| 90/95 [00:53<00:02,  1.84chunk/s]
+embeddings:  96%|█████████▌| 91/95 [00:54<00:02,  1.93chunk/s]
+embeddings:  97%|█████████▋| 92/95 [00:54<00:01,  1.82chunk/s]
+embeddings:  98%|█████████▊| 93/95 [00:55<00:01,  1.89chunk/s]
+embeddings:  99%|█████████▉| 94/95 [00:55<00:00,  1.76chunk/s]
+embeddings: 100%|██████████| 95/95 [00:55<00:00,  2.24chunk/s]
+embeddings: 100%|██████████| 95/95 [00:55<00:00,  1.70chunk/s]
+[2026-02-16T15:25:08.886+0300] {pod_manager.py:447} INFO - [base] 
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   0%|          | 0.00/3.51G [00:00<?, ?B/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   0%|          | 10.5M/3.51G [00:00<00:52, 67.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   1%|          | 26.2M/3.51G [00:00<01:00, 57.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   1%|          | 36.7M/3.51G [00:00<00:55, 62.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   1%|▏         | 47.2M/3.51G [00:00<01:02, 55.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   2%|▏         | 57.7M/3.51G [00:00<00:55, 62.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   2%|▏         | 68.2M/3.51G [00:01<01:04, 53.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   2%|▏         | 78.6M/3.51G [00:01<00:57, 60.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   3%|▎         | 89.1M/3.51G [00:01<00:56, 60.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   3%|▎         | 99.6M/3.51G [00:01<01:05, 52.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   3%|▎         | 110M/3.51G [00:02<01:09, 49.0MB/s] 
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   3%|▎         | 121M/3.51G [00:02<01:01, 55.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   4%|▎         | 131M/3.51G [00:02<01:03, 53.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   4%|▍         | 142M/3.51G [00:02<00:56, 59.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   4%|▍         | 152M/3.51G [00:02<00:58, 57.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   5%|▍         | 163M/3.51G [00:03<01:17, 43.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   5%|▍         | 168M/3.51G [00:03<01:16, 43.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   5%|▍         | 173M/3.51G [00:03<01:22, 40.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   5%|▌         | 184M/3.51G [00:03<01:36, 34.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   6%|▌         | 194M/3.51G [00:03<01:19, 41.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   6%|▌         | 199M/3.51G [00:04<01:39, 33.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   6%|▌         | 210M/3.51G [00:04<01:16, 43.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   6%|▋         | 220M/3.51G [00:04<01:16, 43.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   7%|▋         | 231M/3.51G [00:04<01:10, 46.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   7%|▋         | 246M/3.51G [00:04<01:02, 52.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   7%|▋         | 257M/3.51G [00:05<01:02, 52.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   8%|▊         | 267M/3.51G [00:05<01:01, 52.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   8%|▊         | 278M/3.51G [00:05<00:55, 58.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   8%|▊         | 288M/3.51G [00:05<01:01, 52.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   9%|▊         | 299M/3.51G [00:05<01:02, 51.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   9%|▉         | 309M/3.51G [00:06<00:53, 60.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   9%|▉         | 320M/3.51G [00:06<00:54, 59.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:   9%|▉         | 330M/3.51G [00:06<00:57, 55.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  10%|▉         | 346M/3.51G [00:06<00:54, 57.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  10%|█         | 357M/3.51G [00:06<00:49, 63.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  10%|█         | 367M/3.51G [00:06<00:49, 63.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  11%|█         | 377M/3.51G [00:07<01:10, 44.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  11%|█         | 388M/3.51G [00:07<01:07, 46.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  11%|█▏        | 398M/3.51G [00:07<00:56, 55.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  12%|█▏        | 409M/3.51G [00:07<00:58, 53.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  12%|█▏        | 419M/3.51G [00:08<00:58, 53.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  12%|█▏        | 430M/3.51G [00:08<00:58, 52.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  13%|█▎        | 440M/3.51G [00:08<00:53, 57.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  13%|█▎        | 451M/3.51G [00:08<00:58, 52.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  13%|█▎        | 461M/3.51G [00:08<01:00, 50.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  13%|█▎        | 472M/3.51G [00:09<00:57, 52.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  14%|█▎        | 482M/3.51G [00:09<01:11, 42.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  14%|█▍        | 488M/3.51G [00:09<01:38, 30.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  14%|█▍        | 503M/3.51G [00:10<01:16, 39.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  15%|█▍        | 519M/3.51G [00:10<01:05, 45.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  15%|█▌        | 535M/3.51G [00:10<00:57, 51.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  16%|█▌        | 545M/3.51G [00:10<00:59, 49.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  16%|█▌        | 551M/3.51G [00:10<01:01, 48.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  16%|█▌        | 556M/3.51G [00:11<01:06, 44.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  16%|█▌        | 561M/3.51G [00:11<01:10, 41.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  16%|█▌        | 566M/3.51G [00:11<01:08, 42.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  16%|█▋        | 577M/3.51G [00:11<01:09, 42.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  17%|█▋        | 587M/3.51G [00:11<01:07, 43.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  17%|█▋        | 603M/3.51G [00:12<00:55, 52.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  17%|█▋        | 613M/3.51G [00:12<00:59, 48.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  18%|█▊        | 629M/3.51G [00:12<00:52, 54.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  18%|█▊        | 645M/3.51G [00:12<00:50, 57.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  19%|█▉        | 661M/3.51G [00:13<00:56, 50.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  19%|█▉        | 676M/3.51G [00:13<00:54, 52.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  20%|█▉        | 687M/3.51G [00:13<00:51, 55.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  20%|█▉        | 697M/3.51G [00:13<00:45, 61.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  20%|██        | 708M/3.51G [00:13<00:49, 56.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  20%|██        | 718M/3.51G [00:14<00:50, 54.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  21%|██        | 734M/3.51G [00:14<00:45, 60.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  21%|██        | 744M/3.51G [00:14<00:43, 63.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  21%|██▏       | 755M/3.51G [00:14<00:46, 59.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  22%|██▏       | 765M/3.51G [00:14<00:41, 66.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  22%|██▏       | 776M/3.51G [00:15<00:45, 60.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  22%|██▏       | 786M/3.51G [00:15<00:50, 54.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  23%|██▎       | 797M/3.51G [00:15<00:48, 56.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  23%|██▎       | 807M/3.51G [00:15<00:49, 54.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  23%|██▎       | 818M/3.51G [00:15<00:44, 60.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  24%|██▎       | 828M/3.51G [00:16<00:45, 59.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  24%|██▍       | 839M/3.51G [00:16<00:47, 56.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  24%|██▍       | 849M/3.51G [00:16<00:42, 63.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  24%|██▍       | 860M/3.51G [00:16<00:51, 51.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  25%|██▍       | 870M/3.51G [00:16<00:54, 48.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  25%|██▌       | 886M/3.51G [00:17<00:49, 53.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  26%|██▌       | 902M/3.51G [00:17<00:43, 59.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  26%|██▌       | 912M/3.51G [00:17<00:40, 64.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  26%|██▋       | 923M/3.51G [00:17<00:39, 64.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  27%|██▋       | 933M/3.51G [00:17<00:39, 65.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  27%|██▋       | 944M/3.51G [00:17<00:42, 60.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  27%|██▋       | 954M/3.51G [00:18<00:37, 68.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  27%|██▋       | 965M/3.51G [00:18<00:46, 54.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  28%|██▊       | 975M/3.51G [00:18<00:48, 52.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  28%|██▊       | 986M/3.51G [00:18<00:43, 58.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  28%|██▊       | 996M/3.51G [00:18<00:41, 61.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  29%|██▊       | 1.01G/3.51G [00:19<00:44, 56.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  29%|██▉       | 1.02G/3.51G [00:19<00:44, 56.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  29%|██▉       | 1.03G/3.51G [00:19<00:52, 47.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  29%|██▉       | 1.03G/3.51G [00:19<00:51, 48.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  30%|██▉       | 1.04G/3.51G [00:19<00:43, 56.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  30%|██▉       | 1.05G/3.51G [00:20<00:46, 52.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  30%|███       | 1.06G/3.51G [00:20<00:42, 57.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  31%|███       | 1.07G/3.51G [00:20<00:48, 50.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  31%|███       | 1.09G/3.51G [00:20<00:42, 57.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  31%|███▏      | 1.10G/3.51G [00:20<00:45, 53.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  32%|███▏      | 1.11G/3.51G [00:21<00:52, 45.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  32%|███▏      | 1.12G/3.51G [00:21<01:00, 39.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  32%|███▏      | 1.13G/3.51G [00:21<00:48, 48.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  33%|███▎      | 1.14G/3.51G [00:21<00:46, 51.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  33%|███▎      | 1.15G/3.51G [00:22<00:45, 51.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  33%|███▎      | 1.16G/3.51G [00:22<00:44, 52.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  33%|███▎      | 1.17G/3.51G [00:22<00:44, 52.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  34%|███▎      | 1.18G/3.51G [00:22<00:43, 53.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  34%|███▍      | 1.20G/3.51G [00:22<00:37, 61.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  34%|███▍      | 1.21G/3.51G [00:22<00:41, 55.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  35%|███▍      | 1.22G/3.51G [00:23<00:45, 50.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  35%|███▌      | 1.23G/3.51G [00:23<00:40, 56.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  36%|███▌      | 1.25G/3.51G [00:23<00:38, 58.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  36%|███▌      | 1.26G/3.51G [00:23<00:38, 57.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  36%|███▌      | 1.27G/3.51G [00:24<00:40, 54.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  37%|███▋      | 1.28G/3.51G [00:24<00:43, 51.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  37%|███▋      | 1.29G/3.51G [00:24<00:52, 42.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  37%|███▋      | 1.30G/3.51G [00:24<00:45, 48.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  37%|███▋      | 1.31G/3.51G [00:24<00:47, 47.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  37%|███▋      | 1.31G/3.51G [00:25<00:49, 44.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  38%|███▊      | 1.33G/3.51G [00:25<00:39, 54.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  38%|███▊      | 1.34G/3.51G [00:25<00:40, 53.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  38%|███▊      | 1.35G/3.51G [00:25<00:38, 55.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  39%|███▊      | 1.36G/3.51G [00:25<00:42, 50.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  39%|███▉      | 1.36G/3.51G [00:26<00:47, 45.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  39%|███▉      | 1.37G/3.51G [00:26<00:38, 55.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  39%|███▉      | 1.38G/3.51G [00:26<00:37, 57.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  40%|███▉      | 1.39G/3.51G [00:26<00:37, 56.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  40%|███▉      | 1.41G/3.51G [00:26<00:42, 49.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  40%|████      | 1.42G/3.51G [00:27<00:43, 47.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  40%|████      | 1.42G/3.51G [00:27<00:44, 47.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  41%|████      | 1.43G/3.51G [00:27<00:40, 51.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  41%|████      | 1.44G/3.51G [00:27<00:44, 46.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  41%|████      | 1.45G/3.51G [00:27<00:40, 50.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  41%|████▏     | 1.46G/3.51G [00:27<00:40, 51.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  42%|████▏     | 1.47G/3.51G [00:28<00:34, 58.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  42%|████▏     | 1.48G/3.51G [00:28<00:31, 64.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  42%|████▏     | 1.49G/3.51G [00:28<00:32, 61.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  43%|████▎     | 1.50G/3.51G [00:28<00:35, 57.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  43%|████▎     | 1.52G/3.51G [00:28<00:28, 69.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  43%|████▎     | 1.53G/3.51G [00:28<00:33, 60.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  44%|████▎     | 1.54G/3.51G [00:29<00:36, 54.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  44%|████▍     | 1.55G/3.51G [00:29<00:36, 54.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  44%|████▍     | 1.56G/3.51G [00:29<00:33, 58.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  45%|████▍     | 1.57G/3.51G [00:29<00:32, 60.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  45%|████▌     | 1.59G/3.51G [00:30<00:31, 61.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  45%|████▌     | 1.60G/3.51G [00:30<00:29, 66.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  46%|████▌     | 1.61G/3.51G [00:30<00:32, 58.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  46%|████▌     | 1.62G/3.51G [00:30<00:31, 60.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  47%|████▋     | 1.64G/3.51G [00:30<00:33, 56.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  47%|████▋     | 1.65G/3.51G [00:30<00:32, 58.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  47%|████▋     | 1.66G/3.51G [00:31<00:31, 58.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  47%|████▋     | 1.67G/3.51G [00:31<00:28, 64.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  48%|████▊     | 1.68G/3.51G [00:31<00:33, 54.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  48%|████▊     | 1.69G/3.51G [00:31<00:33, 53.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  48%|████▊     | 1.70G/3.51G [00:31<00:34, 53.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  49%|████▊     | 1.71G/3.51G [00:32<00:32, 56.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  49%|████▉     | 1.72G/3.51G [00:32<00:32, 54.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  50%|████▉     | 1.74G/3.51G [00:32<00:34, 51.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  50%|████▉     | 1.76G/3.51G [00:32<00:29, 60.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  50%|█████     | 1.77G/3.51G [00:33<00:26, 67.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  51%|█████     | 1.78G/3.51G [00:33<00:27, 64.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  51%|█████     | 1.79G/3.51G [00:33<00:29, 57.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  51%|█████     | 1.80G/3.51G [00:33<00:26, 65.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  51%|█████▏    | 1.81G/3.51G [00:33<00:28, 59.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  52%|█████▏    | 1.82G/3.51G [00:33<00:28, 60.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  52%|█████▏    | 1.83G/3.51G [00:34<00:25, 64.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  52%|█████▏    | 1.84G/3.51G [00:34<00:28, 58.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  53%|█████▎    | 1.85G/3.51G [00:34<00:27, 61.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  53%|█████▎    | 1.86G/3.51G [00:34<00:30, 54.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  53%|█████▎    | 1.87G/3.51G [00:35<00:35, 45.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  54%|█████▎    | 1.89G/3.51G [00:35<00:30, 53.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  54%|█████▍    | 1.90G/3.51G [00:35<00:28, 57.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  54%|█████▍    | 1.91G/3.51G [00:35<00:26, 61.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  55%|█████▍    | 1.92G/3.51G [00:35<00:23, 67.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  55%|█████▌    | 1.93G/3.51G [00:35<00:26, 59.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  55%|█████▌    | 1.95G/3.51G [00:36<00:26, 60.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  56%|█████▌    | 1.96G/3.51G [00:36<00:23, 65.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  56%|█████▌    | 1.97G/3.51G [00:36<00:22, 69.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  56%|█████▌    | 1.98G/3.51G [00:36<00:24, 62.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  57%|█████▋    | 1.99G/3.51G [00:36<00:22, 69.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  57%|█████▋    | 2.00G/3.51G [00:37<00:29, 51.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  57%|█████▋    | 2.01G/3.51G [00:37<00:26, 57.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  57%|█████▋    | 2.02G/3.51G [00:37<00:29, 50.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  58%|█████▊    | 2.03G/3.51G [00:37<00:25, 57.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  58%|█████▊    | 2.04G/3.51G [00:37<00:32, 45.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  58%|█████▊    | 2.05G/3.51G [00:38<00:34, 42.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  59%|█████▉    | 2.07G/3.51G [00:38<00:28, 51.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  59%|█████▉    | 2.08G/3.51G [00:38<00:31, 46.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  59%|█████▉    | 2.09G/3.51G [00:38<00:31, 45.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  60%|█████▉    | 2.09G/3.51G [00:39<00:35, 40.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  60%|█████▉    | 2.10G/3.51G [00:39<00:28, 49.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  60%|██████    | 2.11G/3.51G [00:39<00:31, 44.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  61%|██████    | 2.13G/3.51G [00:39<00:27, 51.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  61%|██████    | 2.14G/3.51G [00:39<00:24, 55.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  61%|██████▏   | 2.15G/3.51G [00:40<00:25, 54.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  62%|██████▏   | 2.17G/3.51G [00:40<00:25, 53.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  62%|██████▏   | 2.18G/3.51G [00:40<00:27, 49.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  62%|██████▏   | 2.19G/3.51G [00:40<00:25, 51.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  63%|██████▎   | 2.20G/3.51G [00:41<00:24, 53.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  63%|██████▎   | 2.21G/3.51G [00:41<00:22, 58.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  63%|██████▎   | 2.22G/3.51G [00:41<00:28, 44.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  64%|██████▎   | 2.24G/3.51G [00:41<00:25, 50.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  64%|██████▍   | 2.25G/3.51G [00:42<00:26, 47.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  64%|██████▍   | 2.26G/3.51G [00:42<00:22, 54.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  65%|██████▍   | 2.28G/3.51G [00:42<00:21, 58.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  65%|██████▌   | 2.29G/3.51G [00:42<00:21, 57.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  65%|██████▌   | 2.30G/3.51G [00:42<00:19, 63.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  66%|██████▌   | 2.31G/3.51G [00:42<00:17, 67.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  66%|██████▌   | 2.32G/3.51G [00:43<00:18, 63.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  66%|██████▌   | 2.33G/3.51G [00:43<00:18, 65.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  67%|██████▋   | 2.34G/3.51G [00:43<00:19, 60.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  67%|██████▋   | 2.35G/3.51G [00:43<00:22, 51.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  67%|██████▋   | 2.36G/3.51G [00:43<00:21, 54.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  67%|██████▋   | 2.37G/3.51G [00:44<00:19, 59.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  68%|██████▊   | 2.38G/3.51G [00:44<00:17, 63.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  68%|██████▊   | 2.39G/3.51G [00:44<00:17, 62.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  68%|██████▊   | 2.40G/3.51G [00:44<00:16, 66.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  69%|██████▊   | 2.41G/3.51G [00:44<00:18, 58.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  69%|██████▉   | 2.43G/3.51G [00:44<00:16, 67.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  70%|██████▉   | 2.44G/3.51G [00:45<00:15, 70.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  70%|██████▉   | 2.45G/3.51G [00:45<00:14, 73.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  70%|███████   | 2.46G/3.51G [00:45<00:13, 75.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  70%|███████   | 2.47G/3.51G [00:45<00:15, 68.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  71%|███████   | 2.49G/3.51G [00:45<00:16, 62.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  71%|███████   | 2.50G/3.51G [00:45<00:17, 59.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  71%|███████▏  | 2.51G/3.51G [00:46<00:17, 56.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  72%|███████▏  | 2.52G/3.51G [00:46<00:16, 61.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  72%|███████▏  | 2.53G/3.51G [00:46<00:17, 55.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  72%|███████▏  | 2.54G/3.51G [00:46<00:18, 53.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  73%|███████▎  | 2.56G/3.51G [00:47<00:15, 60.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  73%|███████▎  | 2.57G/3.51G [00:47<00:15, 60.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  74%|███████▎  | 2.58G/3.51G [00:47<00:14, 62.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  74%|███████▍  | 2.60G/3.51G [00:47<00:15, 60.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  74%|███████▍  | 2.61G/3.51G [00:47<00:13, 66.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  75%|███████▍  | 2.63G/3.51G [00:48<00:14, 60.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  75%|███████▌  | 2.64G/3.51G [00:48<00:14, 60.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  75%|███████▌  | 2.65G/3.51G [00:48<00:16, 53.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  76%|███████▌  | 2.66G/3.51G [00:48<00:15, 56.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  76%|███████▌  | 2.67G/3.51G [00:48<00:13, 62.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  76%|███████▋  | 2.68G/3.51G [00:49<00:13, 59.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  77%|███████▋  | 2.69G/3.51G [00:49<00:12, 67.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  77%|███████▋  | 2.71G/3.51G [00:49<00:11, 70.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  77%|███████▋  | 2.72G/3.51G [00:49<00:12, 62.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  78%|███████▊  | 2.73G/3.51G [00:49<00:15, 52.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  78%|███████▊  | 2.74G/3.51G [00:50<00:15, 48.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  78%|███████▊  | 2.75G/3.51G [00:50<00:15, 49.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  79%|███████▊  | 2.76G/3.51G [00:50<00:17, 42.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  79%|███████▉  | 2.78G/3.51G [00:50<00:15, 48.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  80%|███████▉  | 2.79G/3.51G [00:51<00:13, 53.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  80%|███████▉  | 2.80G/3.51G [00:51<00:13, 51.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  80%|████████  | 2.82G/3.51G [00:51<00:13, 52.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  80%|████████  | 2.83G/3.51G [00:51<00:13, 51.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  81%|████████  | 2.84G/3.51G [00:52<00:12, 55.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  81%|████████  | 2.85G/3.51G [00:52<00:14, 46.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  81%|████████  | 2.85G/3.51G [00:52<00:14, 46.8MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  81%|████████▏ | 2.86G/3.51G [00:52<00:13, 49.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  82%|████████▏ | 2.87G/3.51G [00:52<00:11, 57.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  82%|████████▏ | 2.88G/3.51G [00:52<00:10, 59.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  82%|████████▏ | 2.89G/3.51G [00:53<00:10, 59.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  83%|████████▎ | 2.90G/3.51G [00:53<00:10, 58.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  83%|████████▎ | 2.92G/3.51G [00:53<00:09, 63.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  83%|████████▎ | 2.93G/3.51G [00:53<00:09, 60.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  84%|████████▎ | 2.94G/3.51G [00:53<00:08, 64.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  84%|████████▍ | 2.95G/3.51G [00:54<00:10, 53.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  84%|████████▍ | 2.97G/3.51G [00:54<00:09, 55.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  85%|████████▍ | 2.98G/3.51G [00:54<00:09, 54.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  85%|████████▌ | 2.99G/3.51G [00:54<00:09, 56.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  86%|████████▌ | 3.01G/3.51G [00:55<00:08, 57.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  86%|████████▌ | 3.02G/3.51G [00:55<00:08, 57.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  86%|████████▌ | 3.03G/3.51G [00:55<00:08, 57.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  87%|████████▋ | 3.04G/3.51G [00:55<00:08, 54.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  87%|████████▋ | 3.05G/3.51G [00:55<00:08, 56.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  87%|████████▋ | 3.06G/3.51G [00:56<00:08, 55.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  87%|████████▋ | 3.07G/3.51G [00:56<00:07, 55.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  88%|████████▊ | 3.08G/3.51G [00:56<00:07, 56.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  88%|████████▊ | 3.09G/3.51G [00:56<00:06, 60.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  88%|████████▊ | 3.10G/3.51G [00:56<00:08, 47.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  89%|████████▊ | 3.11G/3.51G [00:57<00:08, 48.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  89%|████████▉ | 3.12G/3.51G [00:57<00:07, 51.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  89%|████████▉ | 3.14G/3.51G [00:57<00:06, 56.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  90%|████████▉ | 3.15G/3.51G [00:57<00:06, 58.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  90%|████████▉ | 3.16G/3.51G [00:57<00:06, 58.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  90%|█████████ | 3.17G/3.51G [00:58<00:05, 57.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  91%|█████████ | 3.18G/3.51G [00:58<00:05, 59.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  91%|█████████ | 3.19G/3.51G [00:58<00:06, 51.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  91%|█████████ | 3.20G/3.51G [00:58<00:06, 49.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  91%|█████████▏| 3.21G/3.51G [00:58<00:06, 45.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  92%|█████████▏| 3.22G/3.51G [00:59<00:05, 50.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  92%|█████████▏| 3.23G/3.51G [00:59<00:04, 58.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  92%|█████████▏| 3.25G/3.51G [00:59<00:05, 52.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  93%|█████████▎| 3.26G/3.51G [00:59<00:05, 46.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  93%|█████████▎| 3.27G/3.51G [01:00<00:05, 45.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  93%|█████████▎| 3.28G/3.51G [01:00<00:04, 52.6MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  94%|█████████▎| 3.29G/3.51G [01:00<00:04, 51.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  94%|█████████▍| 3.30G/3.51G [01:00<00:04, 47.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  94%|█████████▍| 3.31G/3.51G [01:00<00:04, 49.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  95%|█████████▍| 3.32G/3.51G [01:01<00:03, 52.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  95%|█████████▌| 3.34G/3.51G [01:01<00:03, 45.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  95%|█████████▌| 3.34G/3.51G [01:01<00:03, 43.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  95%|█████████▌| 3.36G/3.51G [01:01<00:03, 47.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  96%|█████████▌| 3.36G/3.51G [01:01<00:03, 47.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  96%|█████████▌| 3.37G/3.51G [01:02<00:03, 47.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  96%|█████████▌| 3.38G/3.51G [01:02<00:02, 57.4MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  97%|█████████▋| 3.39G/3.51G [01:02<00:02, 55.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  97%|█████████▋| 3.40G/3.51G [01:02<00:02, 54.0MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  97%|█████████▋| 3.41G/3.51G [01:02<00:01, 54.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  97%|█████████▋| 3.42G/3.51G [01:03<00:01, 54.1MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  98%|█████████▊| 3.43G/3.51G [01:03<00:01, 56.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  98%|█████████▊| 3.45G/3.51G [01:03<00:01, 57.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  98%|█████████▊| 3.46G/3.51G [01:03<00:00, 58.3MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  99%|█████████▊| 3.47G/3.51G [01:03<00:00, 66.5MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  99%|█████████▉| 3.48G/3.51G [01:03<00:00, 61.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet:  99%|█████████▉| 3.49G/3.51G [01:04<00:00, 67.9MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet: 100%|█████████▉| 3.50G/3.51G [01:04<00:00, 64.7MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet: 100%|█████████▉| 3.51G/3.51G [01:04<00:00, 65.2MB/s]
+ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet: 100%|██████████| 3.51G/3.51G [01:05<00:00, 53.7MB/s]
+[2026-02-16T15:25:10.656+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:08 | run.ftl.run_top_nm_image_embeds | INFO | готово: записано 1558645 строк (все из множества А) -> s3://recsys-lab/ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet
+[2026-02-16T15:25:10.656+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:10 | run.ftl.run_load_data | INFO | Инициализация конфигов PathConfig и DataPrepConfig...
+[2026-02-16T15:25:10.657+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:10 | common.run_config_loader | INFO | ============================================================
+[2026-02-16T15:25:10.657+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:10 | common.run_config_loader | INFO | FTL_ENV: prod
+[2026-02-16T15:25:10.657+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:10 | common.run_config_loader | INFO | S3_BASE_PATH: s3://recsys-lab/ftl
+[2026-02-16T15:25:10.657+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:10 | common.run_config_loader | INFO | METRICS_TABLE: recsyslab_stg.ftl_tech_metrics
+[2026-02-16T15:25:10.959+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:10 | common.run_config_loader | INFO | ============================================================
+[2026-02-16T15:25:10.959+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:10 | run.ftl.run_load_data | INFO | Загрузка эмбеддингов из s3://recsys-lab/ftl/external_artifacts/msazonov_feb25_ab_embeds_v2.parquet...
+[2026-02-16T15:25:48.258+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:10 | ftl.ftl_loaders | INFO | Загрузка эмбеддингов из: s3://recsys-lab/ftl/top_fashion_nms_embeddings_DYNAMICALLY_UPDATABLE.parquet
+[2026-02-16T15:25:48.344+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:48 | ftl.ftl_loaders | INFO | Кол-во записей в embed_dict_query / embed_dict_target: 1558645, 1558645
+[2026-02-16T15:25:48.344+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:48 | run.ftl.run_load_data | INFO | Эмбеддинги загружены.
+[2026-02-16T15:25:48.345+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:48 | run.ftl.run_load_data | INFO | Загрузка маппингов...
+[2026-02-16T15:25:49.509+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:48 | ftl.ftl_loaders | INFO | Загрузка данных о товарах...
+[2026-02-16T15:25:49.839+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:49 | ftl.ftl_loaders | INFO | items_df: (2071031, 11)
+[2026-02-16T15:25:51.017+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:49 | common.utils | INFO | Loaded mapping s3://recsys-lab/ftl/external_artifacts/2502_nm_prices.parquet, shape=(2063056, 2)
+[2026-02-16T15:25:51.977+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:51 | common.utils | INFO | Loaded mapping s3://recsys-lab/ftl/external_artifacts/2502_nm_to_brand.parquet, shape=(2063056, 2)
+[2026-02-16T15:25:52.863+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:51 | common.utils | INFO | Loaded mapping s3://recsys-lab/ftl/external_artifacts/2502_nm_to_subj.parquet, shape=(2063056, 2)
+[2026-02-16T15:25:53.861+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:52 | common.utils | INFO | Loaded mapping s3://recsys-lab/ftl/external_artifacts/2502_nm_to_kind.parquet, shape=(2063056, 2)
+[2026-02-16T15:25:54.846+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:53 | common.utils | INFO | Loaded mapping s3://recsys-lab/ftl/external_artifacts/2502_nm_to_rating.parquet, shape=(2063056, 2)
+[2026-02-16T15:25:55.562+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:54 | common.utils | INFO | Loaded mapping s3://recsys-lab/ftl/external_artifacts/2502_nm_subj_quant.parquet, shape=(2063056, 2)
+[2026-02-16T15:25:55.563+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | ftl.ftl_loaders | INFO | nm_prices содержит 2063056 записей
+[2026-02-16T15:25:55.563+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | ftl.ftl_loaders | INFO | nm_to_brand содержит 2063056 записей
+[2026-02-16T15:25:55.563+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | ftl.ftl_loaders | INFO | nm_to_subj содержит 2063056 записей
+[2026-02-16T15:25:55.563+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | ftl.ftl_loaders | INFO | nm_to_kind содержит 2063056 записей
+[2026-02-16T15:25:55.563+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | ftl.ftl_loaders | INFO | nm_to_rating содержит 2063056 записей
+[2026-02-16T15:25:55.564+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | ftl.ftl_loaders | INFO | nm_subj_quant содержит 2063056 записей
+[2026-02-16T15:25:55.564+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | run.ftl.run_load_data | INFO | Маппинги загружены.
+[2026-02-16T15:25:55.564+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | run.ftl.run_load_data | INFO | Загрузка шаблонов совместимости...
+[2026-02-16T15:25:55.564+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | ftl.ftl_loaders | INFO | Загрузка несовместимых пар предметов из YAML...
+[2026-02-16T15:25:55.687+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | ftl.ftl_loaders | INFO | Загрузка маппинга категорий из: s3://recsys-lab/ftl/external_artifacts/subjects_to_polyvore.json
+[2026-02-16T15:25:55.715+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | ftl.ftl_loaders | INFO | Маппинг загружен: shape=(154, 5)
+[2026-02-16T15:25:55.715+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | ftl.ftl_loaders | INFO | Всего несовместимых пар (с учётом порядка): 708
+[2026-02-16T15:25:55.715+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | run.ftl.run_load_data | INFO | Шаблоны загружены.
+[2026-02-16T15:25:55.715+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | run.ftl.run_load_data | INFO | Загрузка mapping_to_polyvore...
+[2026-02-16T15:25:55.822+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | ftl.ftl_loaders | INFO | Загрузка маппинга категорий из: s3://recsys-lab/ftl/external_artifacts/subjects_to_polyvore.json
+[2026-02-16T15:25:55.823+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | ftl.ftl_loaders | INFO | Маппинг загружен: shape=(154, 5)
+[2026-02-16T15:25:55.824+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | run.ftl.run_load_data | INFO | mapping_to_polyvore загружен.
+[2026-02-16T15:25:57.326+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:55 | run.ftl.run_load_data | INFO | Выполняем запрос join_basket_with_popular.sql...
+[2026-02-16T15:25:57.327+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:57 | run.ftl.run_load_data | INFO | Empty DataFrame
+[2026-02-16T15:25:57.327+0300] {pod_manager.py:447} INFO - [base] Columns: [user_id, subject_id, kind_id, kind_name, nm_id]
+[2026-02-16T15:25:57.327+0300] {pod_manager.py:447} INFO - [base] Index: []
+[2026-02-16T15:25:57.327+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:57 | run.ftl.run_load_data | INFO | Данные загружены, shape=(0, 5)
+[2026-02-16T15:25:57.330+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:57 | run.ftl.run_load_data | INFO | Фильтрация kind_id in [1,2]. shape=(0, 5)
+[2026-02-16T15:25:57.330+0300] {pod_manager.py:447} INFO - [base] 2026-02-16 15:25:57 | run.ftl.run_load_data | INFO | Applicable users = 0
+[2026-02-16T15:25:57.330+0300] {pod_manager.py:447} INFO - [base] Traceback (most recent call last):
+[2026-02-16T15:25:57.330+0300] {pod_manager.py:447} INFO - [base]   File "<frozen runpy>", line 198, in _run_module_as_main
+[2026-02-16T15:25:57.330+0300] {pod_manager.py:447} INFO - [base]   File "<frozen runpy>", line 88, in _run_code
+[2026-02-16T15:25:57.331+0300] {pod_manager.py:447} INFO - [base]   File "/app/run/ftl/run_pipeline.py", line 48, in <module>
+[2026-02-16T15:25:57.331+0300] {pod_manager.py:447} INFO - [base]     main()
+[2026-02-16T15:25:57.331+0300] {pod_manager.py:447} INFO - [base]   File "/app/run/ftl/run_pipeline.py", line 41, in main
+[2026-02-16T15:25:57.331+0300] {pod_manager.py:447} INFO - [base]     run_load_data.main()
+[2026-02-16T15:25:57.331+0300] {pod_manager.py:447} INFO - [base]   File "/app/run/ftl/run_load_data.py", line 389, in main
+[2026-02-16T15:25:57.331+0300] {pod_manager.py:447} INFO - [base]     assert len(user_stats) >= 1_000, (
+[2026-02-16T15:25:57.331+0300] {pod_manager.py:447} INFO - [base]            ^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-02-16T15:26:03.900+0300] {pod_manager.py:447} INFO - [base] AssertionError: Недостаточное количество пользователей для выборки
+[2026-02-16T15:26:04.910+0300] {pod_manager.py:460} INFO - [base] make: *** [Makefile:39: up] Error 1
+[2026-02-16T15:26:04.939+0300] {pod_manager.py:593} INFO - Pod fit-the-look-run-bt4vxj60 has phase Running
+[2026-02-16T15:26:07.233+0300] {pod.py:785} INFO - Deleting pod: fit-the-look-run-bt4vxj60
+[2026-02-16T15:26:07.330+0300] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/mltool/airflow/pod.py", line 397, in execute
+    return super().execute(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/cncf/kubernetes/operators/pod.py", line 534, in execute
+    return self.execute_sync(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/cncf/kubernetes/operators/pod.py", line 574, in execute_sync
+    self.cleanup(
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/cncf/kubernetes/operators/pod.py", line 715, in cleanup
+    raise AirflowException(
+airflow.exceptions.AirflowException: Pod fit-the-look-run-bt4vxj60 returned a failure.
+remote_pod: {'api_version': 'v1',
+ 'kind': 'Pod',
+ 'metadata': {'annotations': {'cni.projectcalico.org/containerID': '20f8d2c393fe7cb4666440ba3cdcf70edb07baeacc39f4b26b1b8c61a1df9b46',
+                              'cni.projectcalico.org/podIP': '',
+                              'cni.projectcalico.org/podIPs': ''},
+              'cluster_name': None,
+              'creation_timestamp': datetime.datetime(2026, 2, 16, 11, 37, 11, tzinfo=tzutc()),
+              'deletion_grace_period_seconds': None,
+              'deletion_timestamp': None,
+              'finalizers': None,
+              'generate_name': None,
+              'generation': None,
+              'labels': {'airflow_kpo_in_cluster': 'True',
+                         'airflow_version': '2.7.3',
+                         'dag_id': 'fit-the-look',
+                         'kubernetes_pod_operator': 'True',
+                         'run_id': 'scheduled__2026-02-15T0700000000-b4547cc1f',
+                         'task_id': 'run',
+                         'try_number': '6'},
+              'managed_fields': [{'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:labels': {'.': {},
+                                                                            'f:airflow_kpo_in_cluster': {},
+                                                                            'f:airflow_version': {},
+                                                                            'f:dag_id': {},
+                                                                            'f:kubernetes_pod_operator': {},
+                                                                            'f:run_id': {},
+                                                                            'f:task_id': {},
+                                                                            'f:try_number': {}}},
+                                                'f:spec': {'f:affinity': {},
+                                                           'f:containers': {'k:{"name":"base"}': {'.': {},
+                                                                                                  'f:args': {},
+                                                                                                  'f:command': {},
+                                                                                                  'f:env': {'.': {},
+                                                                                                            'k:{"name":"ENV"}': {'.': {},
+                                                                                                                                 'f:name': {},
+                                                                                                                                 'f:value': {}},
+                                                                                                            'k:{"name":"FTL_ENV"}': {'.': {},
+                                                                                                                                     'f:name': {},
+                                                                                                                                     'f:value': {}},
+                                                                                                            'k:{"name":"MKL_NUM_THREADS"}': {'.': {},
+                                                                                                                                             'f:name': {},
+                                                                                                                                             'f:value': {}},
+                                                                                                            'k:{"name":"NVIDIA_DISABLE_REQUIRE"}': {'.': {},
+                                                                                                                                                    'f:name': {},
+                                                                                                                                                    'f:value': {}},
+                                                                                                            'k:{"name":"OMP_NUM_THREADS"}': {'.': {},
+                                                                                                                                             'f:name': {},
+                                                                                                                                             'f:value': {}},
+                                                                                                            'k:{"name":"TZ"}': {'.': {},
+                                                                                                                                'f:name': {},
+                                                                                                                                'f:value': {}}},
+                                                                                                  'f:image': {},
+                                                                                                  'f:imagePullPolicy': {},
+                                                                                                  'f:name': {},
+                                                                                                  'f:resources': {'.': {},
+                                                                                                                  'f:limits': {'.': {},
+                                                                                                                               'f:cpu': {},
+                                                                                                                               'f:ephemeral-storage': {},
+                                                                                                                               'f:memory': {},
+                                                                                                                               'f:nvidia.com/gpu': {}},
+                                                                                                                  'f:requests': {'.': {},
+                                                                                                                                 'f:cpu': {},
+                                                                                                                                 'f:ephemeral-storage': {},
+                                                                                                                                 'f:memory': {},
+                                                                                                                                 'f:nvidia.com/gpu': {}}},
+                                                                                                  'f:securityContext': {'.': {},
+                                                                                                                        'f:readOnlyRootFilesystem': {}},
+                                                                                                  'f:terminationMessagePath': {},
+                                                                                                  'f:terminationMessagePolicy': {},
+                                                                                                  'f:volumeMounts': {'.': {},
+                                                                                                                     'k:{"mountPath":"/etc/vault"}': {'.': {},
+                                                                                                                                                      'f:mountPath': {},
+                                                                                                                                                      'f:name': {}},
+                                                                                                                     'k:{"mountPath":"/vault/secrets"}': {'.': {},
+                                                                                                                                                          'f:mountPath': {},
+                                                                                                                                                          'f:name': {}}}}},
+                                                           'f:dnsPolicy': {},
+                                                           'f:enableServiceLinks': {},
+                                                           'f:imagePullSecrets': {'.': {},
+                                                                                  'k:{"name":"harbor-registry-secret"}': {}},
+                                                           'f:initContainers': {'.': {},
+                                                                                'k:{"name":"001-vault-agent"}': {'.': {},
+                                                                                                                 'f:args': {},
+                                                                                                                 'f:command': {},
+                                                                                                                 'f:env': {'.': {},
+                                                                                                                           'k:{"name":"VAULT_ADDR"}': {'.': {},
+                                                                                                                                                       'f:name': {},
+                                                                                                                                                       'f:value': {}},
+                                                                                                                           'k:{"name":"VAULT_CONFIG"}': {'.': {},
+                                                                                                                                                         'f:name': {},
+                                                                                                                                                         'f:value': {}},
+                                                                                                                           'k:{"name":"VAULT_SKIP_VERIFY"}': {'.': {},
+                                                                                                                                                              'f:name': {},
+                                                                                                                                                              'f:value': {}}},
+                                                                                                                 'f:image': {},
+                                                                                                                 'f:imagePullPolicy': {},
+                                                                                                                 'f:name': {},
+                                                                                                                 'f:resources': {'.': {},
+                                                                                                                                 'f:limits': {'.': {},
+                                                                                                                                              'f:cpu': {},
+                                                                                                                                              'f:memory': {}},
+                                                                                                                                 'f:requests': {'.': {},
+                                                                                                                                                'f:cpu': {},
+                                                                                                                                                'f:memory': {}}},
+                                                                                                                 'f:terminationMessagePath': {},
+                                                                                                                 'f:terminationMessagePolicy': {},
+                                                                                                                 'f:volumeMounts': {'.': {},
+                                                                                                                                    'k:{"mountPath":"/etc/secrets"}': {'.': {},
+                                                                                                                                                                       'f:mountPath': {},
+                                                                                                                                                                       'f:name': {}},
+                                                                                                                                    'k:{"mountPath":"/etc/vault"}': {'.': {},
+                                                                                                                                                                     'f:mountPath': {},
+                                                                                                                                                                     'f:name': {}},
+                                                                                                                                    'k:{"mountPath":"/home/vault"}': {'.': {},
+                                                                                                                                                                      'f:mountPath': {},
+                                                                                                                                                                      'f:name': {}}}}},
+                                                           'f:restartPolicy': {},
+                                                           'f:schedulerName': {},
+                                                           'f:securityContext': {},
+                                                           'f:serviceAccount': {},
+                                                           'f:serviceAccountName': {},
+                                                           'f:terminationGracePeriodSeconds': {},
+                                                           'f:volumes': {'.': {},
+                                                                         'k:{"name":"shared-data"}': {'.': {},
+                                                                                                      'f:emptyDir': {'.': {},
+                                                                                                                     'f:sizeLimit': {}},
+                                                                                                      'f:name': {}},
+                                                                         'k:{"name":"vault-config"}': {'.': {},
+                                                                                                       'f:emptyDir': {'.': {},
+                                                                                                                      'f:sizeLimit': {}},
+                                                                                                       'f:name': {}},
+                                                                         'k:{"name":"vault-home"}': {'.': {},
+                                                                                                     'f:emptyDir': {'.': {},
+                                                                                                                    'f:sizeLimit': {}},
+                                                                                                     'f:name': {}}}}},
+                                  'manager': 'OpenAPI-Generator',
+                                  'operation': 'Update',
+                                  'subresource': None,
+                                  'time': datetime.datetime(2026, 2, 16, 11, 37, 11, tzinfo=tzutc())},
+                                 {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:annotations': {'.': {},
+                                                                                 'f:cni.projectcalico.org/containerID': {},
+                                                                                 'f:cni.projectcalico.org/podIP': {},
+                                                                                 'f:cni.projectcalico.org/podIPs': {}}}},
+                                  'manager': 'calico',
+                                  'operation': 'Update',
+                                  'subresource': 'status',
+                                  'time': datetime.datetime(2026, 2, 16, 12, 26, 5, tzinfo=tzutc())},
+                                 {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:status': {'f:conditions': {'k:{"type":"ContainersReady"}': {'.': {},
+                                                                                                               'f:lastProbeTime': {},
+                                                                                                               'f:lastTransitionTime': {},
+                                                                                                               'f:reason': {},
+                                                                                                               'f:status': {},
+                                                                                                               'f:type': {}},
+                                                                              'k:{"type":"Initialized"}': {'.': {},
+                                                                                                           'f:lastProbeTime': {},
+                                                                                                           'f:lastTransitionTime': {},
+                                                                                                           'f:status': {},
+                                                                                                           'f:type': {}},
+                                                                              'k:{"type":"Ready"}': {'.': {},
+                                                                                                     'f:lastProbeTime': {},
+                                                                                                     'f:lastTransitionTime': {},
+                                                                                                     'f:reason': {},
+                                                                                                     'f:status': {},
+                                                                                                     'f:type': {}}},
+                                                             'f:containerStatuses': {},
+                                                             'f:hostIP': {},
+                                                             'f:initContainerStatuses': {},
+                                                             'f:phase': {},
+                                                             'f:podIP': {},
+                                                             'f:podIPs': {'.': {},
+                                                                          'k:{"ip":"172.20.94.204"}': {'.': {},
+                                                                                                       'f:ip': {}}},
+                                                             'f:startTime': {}}},
+                                  'manager': 'kubelet',
+                                  'operation': 'Update',
+                                  'subresource': 'status',
+                                  'time': datetime.datetime(2026, 2, 16, 12, 26, 6, tzinfo=tzutc())}],
+              'name': 'fit-the-look-run-bt4vxj60',
+              'namespace': 'recsys-lab',
+              'owner_references': None,
+              'resource_version': '895512003',
+              'self_link': None,
+              'uid': '6d8309b9-1016-44c5-aa6f-03bff2610dbc'},
+ 'spec': {'active_deadline_seconds': None,
+          'affinity': {'node_affinity': None,
+                       'pod_affinity': None,
+                       'pod_anti_affinity': None},
+          'automount_service_account_token': None,
+          'containers': [{'args': ['(. /vault/secrets/all && make up '
+                                   'RUN_ARGS="")'],
+                          'command': ['sh', '-c'],
+                          'env': [{'name': 'TZ',
+                                   'value': 'Europe/Moscow',
+                                   'value_from': None},
+                                  {'name': 'OMP_NUM_THREADS',
+                                   'value': '1',
+                                   'value_from': None},
+                                  {'name': 'MKL_NUM_THREADS',
+                                   'value': '1',
+                                   'value_from': None},
+                                  {'name': 'ENV',
+                                   'value': 'prd',
+                                   'value_from': None},
+                                  {'name': 'FTL_ENV',
+                                   'value': 'prod',
+                                   'value_from': None},
+                                  {'name': 'NVIDIA_DISABLE_REQUIRE',
+                                   'value': '1',
+                                   'value_from': None}],
+                          'env_from': None,
+                          'image': 'harbor.wildberries.ru/recommendation/recommendation/recsys-lab/fit-the-look/fit-the-look:v0-0-2-bff12b7d',
+                          'image_pull_policy': 'IfNotPresent',
+                          'lifecycle': None,
+                          'liveness_probe': None,
+                          'name': 'base',
+                          'ports': None,
+                          'readiness_probe': None,
+                          'resources': {'limits': {'cpu': '8',
+                                                   'ephemeral-storage': '100Gi',
+                                                   'memory': '300Gi',
+                                                   'nvidia.com/gpu': '0'},
+                                        'requests': {'cpu': '8',
+                                                     'ephemeral-storage': '100Gi',
+                                                     'memory': '300Gi',
+                                                     'nvidia.com/gpu': '0'}},
+                          'security_context': {'allow_privilege_escalation': False,
+                                               'capabilities': None,
+                                               'privileged': None,
+                                               'proc_mount': None,
+                                               'read_only_root_filesystem': False,
+                                               'run_as_group': None,
+                                               'run_as_non_root': None,
+                                               'run_as_user': None,
+                                               'se_linux_options': None,
+                                               'seccomp_profile': None,
+                                               'windows_options': None},
+                          'startup_probe': None,
+                          'stdin': None,
+                          'stdin_once': None,
+                          'termination_message_path': '/dev/termination-log',
+                          'termination_message_policy': 'File',
+                          'tty': None,
+                          'volume_devices': None,
+                          'volume_mounts': [{'mount_path': '/vault/secrets',
+                                             'mount_propagation': None,
+                                             'name': 'shared-data',
+                                             'read_only': None,
+                                             'sub_path': None,
+                                             'sub_path_expr': None},
+                                            {'mount_path': '/etc/vault',
+                                             'mount_propagation': None,
+                                             'name': 'vault-config',
+                                             'read_only': None,
+                                             'sub_path': None,
+                                             'sub_path_expr': None},
+                                            {'mount_path': '/var/run/secrets/kubernetes.io/serviceaccount',
+                                             'mount_propagation': None,
+                                             'name': 'kube-api-access-jxnpl',
+                                             'read_only': True,
+                                             'sub_path': None,
+                                             'sub_path_expr': None}],
+                          'working_dir': None}],
+          'dns_config': None,
+          'dns_policy': 'ClusterFirst',
+          'enable_service_links': True,
+          'ephemeral_containers': None,
+          'host_aliases': None,
+          'host_ipc': None,
+          'host_network': None,
+          'host_pid': None,
+          'hostname': None,
+          'image_pull_secrets': [{'name': 'harbor-registry-secret'}],
+          'init_containers': [{'args': ['echo "$VAULT_CONFIG" > '
+                                        '/etc/vault/vault-agent-config.hcl && '
+                                        'vault agent '
+                                        '-config=/etc/vault/vault-agent-config.hcl '
+                                        '-log-level=trace'],
+                               'command': ['/bin/sh', '-c'],
+                               'env': [{'name': 'VAULT_ADDR',
+                                        'value': 'https://vault.wildberries.ru:8200',
+                                        'value_from': None},
+                                       {'name': 'VAULT_SKIP_VERIFY',
+                                        'value': 'true',
+                                        'value_from': None},
+                                       {'name': 'VAULT_CONFIG',
+                                        'value': 'exit_after_auth = true\n'
+                                                 'pid_file = '
+                                                 '"/home/vault/pidfile"\n'
+                                                 '\n'
+                                                 'auto_auth {\n'
+                                                 '  method "kubernetes" {\n'
+                                                 '      mount_path = '
+                                                 '"auth/k8s.ml-infra-xc.vault-auth-per-cluster"\n'
+                                                 '      config = {\n'
+                                                 '          role = '
+                                                 '"recsys-lab"\n'
+                                                 '      }\n'
+                                                 '  }\n'
+                                                 '\n'
+                                                 '  sink "file" {\n'
+                                                 '      config = {\n'
+                                                 '          path = '
+                                                 '"/home/vault/.vault-token"\n'
+                                                 '      }\n'
+                                                 '  }\n'
+                                                 '}\n'
+                                                 'template {\n'
+                                                 'destination = '
+                                                 '"/etc/secrets/all"\n'
+                                                 'contents = <<EOT\n'
+                                                 '#!/bin/sh\n'
+                                                 '{{ with secret '
+                                                 '"services/recsys-lab/prd/fit-the-look" '
+                                                 '}}\n'
+                                                 'export '
+                                                 "CLICKHOUSE_PASSWORD='{{ "
+                                                 '.Data.CLICKHOUSE_PASSWORD '
+                                                 "}}'\n"
+                                                 "export CLICKHOUSE_USER='{{ "
+                                                 ".Data.CLICKHOUSE_USER }}'\n"
+                                                 "export GREENPLUM_HOST='{{ "
+                                                 ".Data.GREENPLUM_HOST }}'\n"
+                                                 'export '
+                                                 "GREENPLUM_PASSWORD='{{ "
+                                                 '.Data.GREENPLUM_PASSWORD '
+                                                 "}}'\n"
+                                                 "export GREENPLUM_USER='{{ "
+                                                 ".Data.GREENPLUM_USER }}'\n"
+                                                 "export S3_ACCESS_KEY='{{ "
+                                                 ".Data.S3_ACCESS_KEY }}'\n"
+                                                 "export S3_ENDPOINT_URL='{{ "
+                                                 ".Data.S3_ENDPOINT_URL }}'\n"
+                                                 'export '
+                                                 "S3_SECRET_ACCESS_KEY='{{ "
+                                                 '.Data.S3_SECRET_ACCESS_KEY '
+                                                 "}}'\n"
+                                                 "export TRITON_HOST='{{ "
+                                                 ".Data.TRITON_HOST }}'\n"
+                                                 'export '
+                                                 "TRITON_INPUT_DTYPE='{{ "
+                                                 '.Data.TRITON_INPUT_DTYPE '
+                                                 "}}'\n"
+                                                 "export TRITON_INPUT_NAME='{{ "
+                                                 ".Data.TRITON_INPUT_NAME }}'\n"
+                                                 "export TRITON_MODEL_NAME='{{ "
+                                                 ".Data.TRITON_MODEL_NAME }}'\n"
+                                                 'export '
+                                                 "TRITON_MODEL_VERSION='{{ "
+                                                 '.Data.TRITON_MODEL_VERSION '
+                                                 "}}'\n"
+                                                 'export '
+                                                 "TRITON_OUTPUT_NAMES='{{ "
+                                                 '.Data.TRITON_OUTPUT_NAMES '
+                                                 "}}'\n"
+                                                 "export TRITON_PORT='{{ "
+                                                 ".Data.TRITON_PORT }}'\n"
+                                                 'export '
+                                                 "IMAGE_EMBED_BATCH_SIZE='{{ "
+                                                 '.Data.IMAGE_EMBED_BATCH_SIZE '
+                                                 "}}'\n"
+                                                 'export '
+                                                 "IMAGE_EMBED_PICTURE_TYPE='{{ "
+                                                 '.Data.IMAGE_EMBED_PICTURE_TYPE '
+                                                 "}}'\n"
+                                                 '{{ end }}\n'
+                                                 'EOT\n'
+                                                 '}',
+                                        'value_from': None}],
+                               'env_from': None,
+                               'image': 'harbor.wildberries.ru/docker-hub-proxy/library/vault:1.8.1',
+                               'image_pull_policy': 'IfNotPresent',
+                               'lifecycle': None,
+                               'liveness_probe': None,
+                               'name': '001-vault-agent',
+                               'ports': None,
+                               'readiness_probe': None,
+                               'resources': {'limits': {'cpu': '4',
+                                                        'memory': '2Gi'},
+                                             'requests': {'cpu': '2',
+                                                          'memory': '1Gi'}},
+                               'security_context': {'allow_privilege_escalation': False,
+                                                    'capabilities': None,
+                                                    'privileged': None,
+                                                    'proc_mount': None,
+                                                    'read_only_root_filesystem': None,
+                                                    'run_as_group': None,
+                                                    'run_as_non_root': None,
+                                                    'run_as_user': None,
+                                                    'se_linux_options': None,
+                                                    'seccomp_profile': None,
+                                                    'windows_options': None},
+                               'startup_probe': None,
+                               'stdin': None,
+                               'stdin_once': None,
+                               'termination_message_path': '/dev/termination-log',
+                               'termination_message_policy': 'File',
+                               'tty': None,
+                               'volume_devices': None,
+                               'volume_mounts': [{'mount_path': '/etc/vault',
+                                                  'mount_propagation': None,
+                                                  'name': 'vault-config',
+                                                  'read_only': None,
+                                                  'sub_path': None,
+                                                  'sub_path_expr': None},
+                                                 {'mount_path': '/etc/secrets',
+                                                  'mount_propagation': None,
+                                                  'name': 'shared-data',
+                                                  'read_only': None,
+                                                  'sub_path': None,
+                                                  'sub_path_expr': None},
+                                                 {'mount_path': '/home/vault',
+                                                  'mount_propagation': None,
+                                                  'name': 'vault-home',
+                                                  'read_only': None,
+                                                  'sub_path': None,
+                                                  'sub_path_expr': None},
+                                                 {'mount_path': '/var/run/secrets/kubernetes.io/serviceaccount',
+                                                  'mount_propagation': None,
+                                                  'name': 'kube-api-access-jxnpl',
+                                                  'read_only': True,
+                                                  'sub_path': None,
+                                                  'sub_path_expr': None}],
+                               'working_dir': None}],
+          'node_name': 'ml-infrastructure-k8s-08.xc.wb.ru',
+          'node_selector': None,
+          'os': None,
+          'overhead': None,
+          'preemption_policy': 'PreemptLowerPriority',
+          'priority': 0,
+          'priority_class_name': None,
+          'readiness_gates': None,
+          'restart_policy': 'Never',
+          'runtime_class_name': None,
+          'scheduler_name': 'default-scheduler',
+          'security_context': {'fs_group': None,
+                               'fs_group_change_policy': None,
+                               'run_as_group': None,
+                               'run_as_non_root': None,
+                               'run_as_user': None,
+                               'se_linux_options': None,
+                               'seccomp_profile': None,
+                               'supplemental_groups': None,
+                               'sysctls': None,
+                               'windows_options': None},
+          'service_account': 'vault-auth',
+          'service_account_name': 'vault-auth',
+          'set_hostname_as_fqdn': None,
+          'share_process_namespace': None,
+          'subdomain': None,
+          'termination_grace_period_seconds': 30,
+          'tolerations': [{'effect': 'NoExecute',
+                           'key': 'node.kubernetes.io/not-ready',
+                           'operator': 'Exists',
+                           'toleration_seconds': 300,
+                           'value': None},
+                          {'effect': 'NoExecute',
+                           'key': 'node.kubernetes.io/unreachable',
+                           'operator': 'Exists',
+                           'toleration_seconds': 300,
+                           'value': None}],
+          'topology_spread_constraints': None,
+          'volumes': [{'aws_elastic_block_store': None,
+                       'azure_disk': None,
+                       'azure_file': None,
+                       'cephfs': None,
+                       'cinder': None,
+                       'config_map': None,
+                       'csi': None,
+                       'downward_api': None,
+                       'empty_dir': {'medium': None, 'size_limit': '256Mi'},
+                       'ephemeral': None,
+                       'fc': None,
+                       'flex_volume': None,
+                       'flocker': None,
+                       'gce_persistent_disk': None,
+                       'git_repo': None,
+                       'glusterfs': None,
+                       'host_path': None,
+                       'iscsi': None,
+                       'name': 'shared-data',
+                       'nfs': None,
+                       'persistent_volume_claim': None,
+                       'photon_persistent_disk': None,
+                       'portworx_volume': None,
+                       'projected': None,
+                       'quobyte': None,
+                       'rbd': None,
+                       'scale_io': None,
+                       'secret': None,
+                       'storageos': None,
+                       'vsphere_volume': None},
+                      {'aws_elastic_block_store': None,
+                       'azure_disk': None,
+                       'azure_file': None,
+                       'cephfs': None,
+                       'cinder': None,
+                       'config_map': None,
+                       'csi': None,
+                       'downward_api': None,
+                       'empty_dir': {'medium': None, 'size_limit': '256Mi'},
+                       'ephemeral': None,
+                       'fc': None,
+                       'flex_volume': None,
+                       'flocker': None,
+                       'gce_persistent_disk': None,
+                       'git_repo': None,
+                       'glusterfs': None,
+                       'host_path': None,
+                       'iscsi': None,
+                       'name': 'vault-config',
+                       'nfs': None,
+                       'persistent_volume_claim': None,
+                       'photon_persistent_disk': None,
+                       'portworx_volume': None,
+                       'projected': None,
+                       'quobyte': None,
+                       'rbd': None,
+                       'scale_io': None,
+                       'secret': None,
+                       'storageos': None,
+                       'vsphere_volume': None},
+                      {'aws_elastic_block_store': None,
+                       'azure_disk': None,
+                       'azure_file': None,
+                       'cephfs': None,
+                       'cinder': None,
+                       'config_map': None,
+                       'csi': None,
+                       'downward_api': None,
+                       'empty_dir': {'medium': None, 'size_limit': '256Mi'},
+                       'ephemeral': None,
+                       'fc': None,
+                       'flex_volume': None,
+                       'flocker': None,
+                       'gce_persistent_disk': None,
+                       'git_repo': None,
+                       'glusterfs': None,
+                       'host_path': None,
+                       'iscsi': None,
+                       'name': 'vault-home',
+                       'nfs': None,
+                       'persistent_volume_claim': None,
+                       'photon_persistent_disk': None,
+                       'portworx_volume': None,
+                       'projected': None,
+                       'quobyte': None,
+                       'rbd': None,
+                       'scale_io': None,
+                       'secret': None,
+                       'storageos': None,
+                       'vsphere_volume': None},
+                      {'aws_elastic_block_store': None,
+                       'azure_disk': None,
+                       'azure_file': None,
+                       'cephfs': None,
+                       'cinder': None,
+                       'config_map': None,
+                       'csi': None,
+                       'downward_api': None,
+                       'empty_dir': None,
+                       'ephemeral': None,
+                       'fc': None,
+                       'flex_volume': None,
+                       'flocker': None,
+                       'gce_persistent_disk': None,
+                       'git_repo': None,
+                       'glusterfs': None,
+                       'host_path': None,
+                       'iscsi': None,
+                       'name': 'kube-api-access-jxnpl',
+                       'nfs': None,
+                       'persistent_volume_claim': None,
+                       'photon_persistent_disk': None,
+                       'portworx_volume': None,
+                       'projected': {'default_mode': 420,
+                                     'sources': [{'config_map': None,
+                                                  'downward_api': None,
+                                                  'secret': None,
+                                                  'service_account_token': {'audience': None,
+                                                                            'expiration_seconds': 3607,
+                                                                            'path': 'token'}},
+                                                 {'config_map': {'items': [{'key': 'ca.crt',
+                                                                            'mode': None,
+                                                                            'path': 'ca.crt'}],
+                                                                 'name': 'kube-root-ca.crt',
+                                                                 'optional': None},
+                                                  'downward_api': None,
+                                                  'secret': None,
+                                                  'service_account_token': None},
+                                                 {'config_map': None,
+                                                  'downward_api': {'items': [{'field_ref': {'api_version': 'v1',
+                                                                                            'field_path': 'metadata.namespace'},
+                                                                              'mode': None,
+                                                                              'path': 'namespace',
+                                                                              'resource_field_ref': None}]},
+                                                  'secret': None,
+                                                  'service_account_token': None}]},
+                       'quobyte': None,
+                       'rbd': None,
+                       'scale_io': None,
+                       'secret': None,
+                       'storageos': None,
+                       'vsphere_volume': None}]},
+ 'status': {'conditions': [{'last_probe_time': None,
+                            'last_transition_time': datetime.datetime(2026, 2, 16, 11, 37, 13, tzinfo=tzutc()),
+                            'message': None,
+                            'reason': None,
+                            'status': 'True',
+                            'type': 'Initialized'},
+                           {'last_probe_time': None,
+                            'last_transition_time': datetime.datetime(2026, 2, 16, 12, 26, 4, tzinfo=tzutc()),
+                            'message': None,
+                            'reason': 'PodFailed',
+                            'status': 'False',
+                            'type': 'Ready'},
+                           {'last_probe_time': None,
+                            'last_transition_time': datetime.datetime(2026, 2, 16, 12, 26, 4, tzinfo=tzutc()),
+                            'message': None,
+                            'reason': 'PodFailed',
+                            'status': 'False',
+                            'type': 'ContainersReady'},
+                           {'last_probe_time': None,
+                            'last_transition_time': datetime.datetime(2026, 2, 16, 11, 37, 11, tzinfo=tzutc()),
+                            'message': None,
+                            'reason': None,
+                            'status': 'True',
+                            'type': 'PodScheduled'}],
+            'container_statuses': [{'container_id': 'containerd://c124762861e05351f87f62a2a0cdda1ee43b8b857e85ac8f762ed3859852faee',
+                                    'image': 'harbor.wildberries.ru/recommendation/recommendation/recsys-lab/fit-the-look/fit-the-look:v0-0-2-bff12b7d',
+                                    'image_id': 'harbor.wildberries.ru/recommendation/recommendation/recsys-lab/fit-the-look/fit-the-look@sha256:252be034a30a9d5f55efdb0e099e1f5e143676254d8627bb449ca39fc2624308',
+                                    'last_state': {'running': None,
+                                                   'terminated': None,
+                                                   'waiting': None},
+                                    'name': 'base',
+                                    'ready': False,
+                                    'restart_count': 0,
+                                    'started': False,
+                                    'state': {'running': None,
+                                              'terminated': {'container_id': 'containerd://c124762861e05351f87f62a2a0cdda1ee43b8b857e85ac8f762ed3859852faee',
+                                                             'exit_code': 2,
+                                                             'finished_at': datetime.datetime(2026, 2, 16, 12, 26, 3, tzinfo=tzutc()),
+                                                             'message': None,
+                                                             'reason': 'Error',
+                                                             'signal': None,
+                                                             'started_at': datetime.datetime(2026, 2, 16, 11, 37, 13, tzinfo=tzutc())},
+                                              'waiting': None}}],
+            'ephemeral_container_statuses': None,
+            'host_ip': '10.49.24.106',
+            'init_container_statuses': [{'container_id': 'containerd://86b87459e9a3a28b3785eae40955d3eda23001b14d43255d7fed708789c7c181',
+                                         'image': 'harbor.wildberries.ru/docker-hub-proxy/library/vault:1.8.1',
+                                         'image_id': 'harbor.wildberries.ru/docker-hub-proxy/library/vault@sha256:17c8fb627a230a25d2ca1073ee501b4dfd5deda47ea811ac101a989666c00170',
+                                         'last_state': {'running': None,
+                                                        'terminated': None,
+                                                        'waiting': None},
+                                         'name': '001-vault-agent',
+                                         'ready': True,
+                                         'restart_count': 0,
+                                         'started': None,
+                                         'state': {'running': None,
+                                                   'terminated': {'container_id': 'containerd://86b87459e9a3a28b3785eae40955d3eda23001b14d43255d7fed708789c7c181',
+                                                                  'exit_code': 0,
+                                                                  'finished_at': datetime.datetime(2026, 2, 16, 11, 37, 12, tzinfo=tzutc()),
+                                                                  'message': None,
+                                                                  'reason': 'Completed',
+                                                                  'signal': None,
+                                                                  'started_at': datetime.datetime(2026, 2, 16, 11, 37, 11, tzinfo=tzutc())},
+                                                   'waiting': None}}],
+            'message': None,
+            'nominated_node_name': None,
+            'phase': 'Failed',
+            'pod_i_ps': [{'ip': '172.20.94.204'}],
+            'pod_ip': '172.20.94.204',
+            'qos_class': 'Burstable',
+            'reason': None,
+            'start_time': datetime.datetime(2026, 2, 16, 11, 37, 11, tzinfo=tzutc())}}
+[2026-02-16T15:26:07.335+0300] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=fit-the-look, task_id=run, execution_date=20260215T070000, start_date=20260216T113710, end_date=20260216T122607
+[2026-02-16T15:26:07.624+0300] {standard_task_runner.py:104} ERROR - Failed to execute job 4989347 for task run (Pod fit-the-look-run-bt4vxj60 returned a failure.
+remote_pod: {'api_version': 'v1',
+ 'kind': 'Pod',
+ 'metadata': {'annotations': {'cni.projectcalico.org/containerID': '20f8d2c393fe7cb4666440ba3cdcf70edb07baeacc39f4b26b1b8c61a1df9b46',
+                              'cni.projectcalico.org/podIP': '',
+                              'cni.projectcalico.org/podIPs': ''},
+              'cluster_name': None,
+              'creation_timestamp': datetime.datetime(2026, 2, 16, 11, 37, 11, tzinfo=tzutc()),
+              'deletion_grace_period_seconds': None,
+              'deletion_timestamp': None,
+              'finalizers': None,
+              'generate_name': None,
+              'generation': None,
+              'labels': {'airflow_kpo_in_cluster': 'True',
+                         'airflow_version': '2.7.3',
+                         'dag_id': 'fit-the-look',
+                         'kubernetes_pod_operator': 'True',
+                         'run_id': 'scheduled__2026-02-15T0700000000-b4547cc1f',
+                         'task_id': 'run',
+                         'try_number': '6'},
+              'managed_fields': [{'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:labels': {'.': {},
+                                                                            'f:airflow_kpo_in_cluster': {},
+                                                                            'f:airflow_version': {},
+                                                                            'f:dag_id': {},
+                                                                            'f:kubernetes_pod_operator': {},
+                                                                            'f:run_id': {},
+                                                                            'f:task_id': {},
+                                                                            'f:try_number': {}}},
+                                                'f:spec': {'f:affinity': {},
+                                                           'f:containers': {'k:{"name":"base"}': {'.': {},
+                                                                                                  'f:args': {},
+                                                                                                  'f:command': {},
+                                                                                                  'f:env': {'.': {},
+                                                                                                            'k:{"name":"ENV"}': {'.': {},
+                                                                                                                                 'f:name': {},
+                                                                                                                                 'f:value': {}},
+                                                                                                            'k:{"name":"FTL_ENV"}': {'.': {},
+                                                                                                                                     'f:name': {},
+                                                                                                                                     'f:value': {}},
+                                                                                                            'k:{"name":"MKL_NUM_THREADS"}': {'.': {},
+                                                                                                                                             'f:name': {},
+                                                                                                                                             'f:value': {}},
+                                                                                                            'k:{"name":"NVIDIA_DISABLE_REQUIRE"}': {'.': {},
+                                                                                                                                                    'f:name': {},
+                                                                                                                                                    'f:value': {}},
+                                                                                                            'k:{"name":"OMP_NUM_THREADS"}': {'.': {},
+                                                                                                                                             'f:name': {},
+                                                                                                                                             'f:value': {}},
+                                                                                                            'k:{"name":"TZ"}': {'.': {},
+                                                                                                                                'f:name': {},
+                                                                                                                                'f:value': {}}},
+                                                                                                  'f:image': {},
+                                                                                                  'f:imagePullPolicy': {},
+                                                                                                  'f:name': {},
+                                                                                                  'f:resources': {'.': {},
+                                                                                                                  'f:limits': {'.': {},
+                                                                                                                               'f:cpu': {},
+                                                                                                                               'f:ephemeral-storage': {},
+                                                                                                                               'f:memory': {},
+                                                                                                                               'f:nvidia.com/gpu': {}},
+                                                                                                                  'f:requests': {'.': {},
+                                                                                                                                 'f:cpu': {},
+                                                                                                                                 'f:ephemeral-storage': {},
+                                                                                                                                 'f:memory': {},
+                                                                                                                                 'f:nvidia.com/gpu': {}}},
+                                                                                                  'f:securityContext': {'.': {},
+                                                                                                                        'f:readOnlyRootFilesystem': {}},
+                                                                                                  'f:terminationMessagePath': {},
+                                                                                                  'f:terminationMessagePolicy': {},
+                                                                                                  'f:volumeMounts': {'.': {},
+                                                                                                                     'k:{"mountPath":"/etc/vault"}': {'.': {},
+                                                                                                                                                      'f:mountPath': {},
+                                                                                                                                                      'f:name': {}},
+                                                                                                                     'k:{"mountPath":"/vault/secrets"}': {'.': {},
+                                                                                                                                                          'f:mountPath': {},
+                                                                                                                                                          'f:name': {}}}}},
+                                                           'f:dnsPolicy': {},
+                                                           'f:enableServiceLinks': {},
+                                                           'f:imagePullSecrets': {'.': {},
+                                                                                  'k:{"name":"harbor-registry-secret"}': {}},
+                                                           'f:initContainers': {'.': {},
+                                                                                'k:{"name":"001-vault-agent"}': {'.': {},
+                                                                                                                 'f:args': {},
+                                                                                                                 'f:command': {},
+                                                                                                                 'f:env': {'.': {},
+                                                                                                                           'k:{"name":"VAULT_ADDR"}': {'.': {},
+                                                                                                                                                       'f:name': {},
+                                                                                                                                                       'f:value': {}},
+                                                                                                                           'k:{"name":"VAULT_CONFIG"}': {'.': {},
+                                                                                                                                                         'f:name': {},
+                                                                                                                                                         'f:value': {}},
+                                                                                                                           'k:{"name":"VAULT_SKIP_VERIFY"}': {'.': {},
+                                                                                                                                                              'f:name': {},
+                                                                                                                                                              'f:value': {}}},
+                                                                                                                 'f:image': {},
+                                                                                                                 'f:imagePullPolicy': {},
+                                                                                                                 'f:name': {},
+                                                                                                                 'f:resources': {'.': {},
+                                                                                                                                 'f:limits': {'.': {},
+                                                                                                                                              'f:cpu': {},
+                                                                                                                                              'f:memory': {}},
+                                                                                                                                 'f:requests': {'.': {},
+                                                                                                                                                'f:cpu': {},
+                                                                                                                                                'f:memory': {}}},
+                                                                                                                 'f:terminationMessagePath': {},
+                                                                                                                 'f:terminationMessagePolicy': {},
+                                                                                                                 'f:volumeMounts': {'.': {},
+                                                                                                                                    'k:{"mountPath":"/etc/secrets"}': {'.': {},
+                                                                                                                                                                       'f:mountPath': {},
+                                                                                                                                                                       'f:name': {}},
+                                                                                                                                    'k:{"mountPath":"/etc/vault"}': {'.': {},
+                                                                                                                                                                     'f:mountPath': {},
+                                                                                                                                                                     'f:name': {}},
+                                                                                                                                    'k:{"mountPath":"/home/vault"}': {'.': {},
+                                                                                                                                                                      'f:mountPath': {},
+                                                                                                                                                                      'f:name': {}}}}},
+                                                           'f:restartPolicy': {},
+                                                           'f:schedulerName': {},
+                                                           'f:securityContext': {},
+                                                           'f:serviceAccount': {},
+                                                           'f:serviceAccountName': {},
+                                                           'f:terminationGracePeriodSeconds': {},
+                                                           'f:volumes': {'.': {},
+                                                                         'k:{"name":"shared-data"}': {'.': {},
+                                                                                                      'f:emptyDir': {'.': {},
+                                                                                                                     'f:sizeLimit': {}},
+                                                                                                      'f:name': {}},
+                                                                         'k:{"name":"vault-config"}': {'.': {},
+                                                                                                       'f:emptyDir': {'.': {},
+                                                                                                                      'f:sizeLimit': {}},
+                                                                                                       'f:name': {}},
+                                                                         'k:{"name":"vault-home"}': {'.': {},
+                                                                                                     'f:emptyDir': {'.': {},
+                                                                                                                    'f:sizeLimit': {}},
+                                                                                                     'f:name': {}}}}},
+                                  'manager': 'OpenAPI-Generator',
+                                  'operation': 'Update',
+                                  'subresource': None,
+                                  'time': datetime.datetime(2026, 2, 16, 11, 37, 11, tzinfo=tzutc())},
+                                 {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:annotations': {'.': {},
+                                                                                 'f:cni.projectcalico.org/containerID': {},
+                                                                                 'f:cni.projectcalico.org/podIP': {},
+                                                                                 'f:cni.projectcalico.org/podIPs': {}}}},
+                                  'manager': 'calico',
+                                  'operation': 'Update',
+                                  'subresource': 'status',
+                                  'time': datetime.datetime(2026, 2, 16, 12, 26, 5, tzinfo=tzutc())},
+                                 {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:status': {'f:conditions': {'k:{"type":"ContainersReady"}': {'.': {},
+                                                                                                               'f:lastProbeTime': {},
+                                                                                                               'f:lastTransitionTime': {},
+                                                                                                               'f:reason': {},
+                                                                                                               'f:status': {},
+                                                                                                               'f:type': {}},
+                                                                              'k:{"type":"Initialized"}': {'.': {},
+                                                                                                           'f:lastProbeTime': {},
+                                                                                                           'f:lastTransitionTime': {},
+                                                                                                           'f:status': {},
+                                                                                                           'f:type': {}},
+                                                                              'k:{"type":"Ready"}': {'.': {},
+                                                                                                     'f:lastProbeTime': {},
+                                                                                                     'f:lastTransitionTime': {},
+                                                                                                     'f:reason': {},
+                                                                                                     'f:status': {},
+                                                                                                     'f:type': {}}},
+                                                             'f:containerStatuses': {},
+                                                             'f:hostIP': {},
+                                                             'f:initContainerStatuses': {},
+                                                             'f:phase': {},
+                                                             'f:podIP': {},
+                                                             'f:podIPs': {'.': {},
+                                                                          'k:{"ip":"172.20.94.204"}': {'.': {},
+                                                                                                       'f:ip': {}}},
+                                                             'f:startTime': {}}},
+                                  'manager': 'kubelet',
+                                  'operation': 'Update',
+                                  'subresource': 'status',
+                                  'time': datetime.datetime(2026, 2, 16, 12, 26, 6, tzinfo=tzutc())}],
+              'name': 'fit-the-look-run-bt4vxj60',
+              'namespace': 'recsys-lab',
+              'owner_references': None,
+              'resource_version': '895512003',
+              'self_link': None,
+              'uid': '6d8309b9-1016-44c5-aa6f-03bff2610dbc'},
+ 'spec': {'active_deadline_seconds': None,
+          'affinity': {'node_affinity': None,
+                       'pod_affinity': None,
+                       'pod_anti_affinity': None},
+          'automount_service_account_token': None,
+          'containers': [{'args': ['(. /vault/secrets/all && make up '
+                                   'RUN_ARGS="")'],
+                          'command': ['sh', '-c'],
+                          'env': [{'name': 'TZ',
+                                   'value': 'Europe/Moscow',
+                                   'value_from': None},
+                                  {'name': 'OMP_NUM_THREADS',
+                                   'value': '1',
+                                   'value_from': None},
+                                  {'name': 'MKL_NUM_THREADS',
+                                   'value': '1',
+                                   'value_from': None},
+                                  {'name': 'ENV',
+                                   'value': 'prd',
+                                   'value_from': None},
+                                  {'name': 'FTL_ENV',
+                                   'value': 'prod',
+                                   'value_from': None},
+                                  {'name': 'NVIDIA_DISABLE_REQUIRE',
+                                   'value': '1',
+                                   'value_from': None}],
+                          'env_from': None,
+                          'image': 'harbor.wildberries.ru/recommendation/recommendation/recsys-lab/fit-the-look/fit-the-look:v0-0-2-bff12b7d',
+                          'image_pull_policy': 'IfNotPresent',
+                          'lifecycle': None,
+                          'liveness_probe': None,
+                          'name': 'base',
+                          'ports': None,
+                          'readiness_probe': None,
+                          'resources': {'limits': {'cpu': '8',
+                                                   'ephemeral-storage': '100Gi',
+                                                   'memory': '300Gi',
+                                                   'nvidia.com/gpu': '0'},
+                                        'requests': {'cpu': '8',
+                                                     'ephemeral-storage': '100Gi',
+                                                     'memory': '300Gi',
+                                                     'nvidia.com/gpu': '0'}},
+                          'security_context': {'allow_privilege_escalation': False,
+                                               'capabilities': None,
+                                               'privileged': None,
+                                               'proc_mount': None,
+                                               'read_only_root_filesystem': False,
+                                               'run_as_group': None,
+                                               'run_as_non_root': None,
+                                               'run_as_user': None,
+                                               'se_linux_options': None,
+                                               'seccomp_profile': None,
+                                               'windows_options': None},
+                          'startup_probe': None,
+                          'stdin': None,
+                          'stdin_once': None,
+                          'termination_message_path': '/dev/termination-log',
+                          'termination_message_policy': 'File',
+                          'tty': None,
+                          'volume_devices': None,
+                          'volume_mounts': [{'mount_path': '/vault/secrets',
+                                             'mount_propagation': None,
+                                             'name': 'shared-data',
+                                             'read_only': None,
+                                             'sub_path': None,
+                                             'sub_path_expr': None},
+                                            {'mount_path': '/etc/vault',
+                                             'mount_propagation': None,
+                                             'name': 'vault-config',
+                                             'read_only': None,
+                                             'sub_path': None,
+                                             'sub_path_expr': None},
+                                            {'mount_path': '/var/run/secrets/kubernetes.io/serviceaccount',
+                                             'mount_propagation': None,
+                                             'name': 'kube-api-access-jxnpl',
+                                             'read_only': True,
+                                             'sub_path': None,
+                                             'sub_path_expr': None}],
+                          'working_dir': None}],
+          'dns_config': None,
+          'dns_policy': 'ClusterFirst',
+          'enable_service_links': True,
+          'ephemeral_containers': None,
+          'host_aliases': None,
+          'host_ipc': None,
+          'host_network': None,
+          'host_pid': None,
+          'hostname': None,
+          'image_pull_secrets': [{'name': 'harbor-registry-secret'}],
+          'init_containers': [{'args': ['echo "$VAULT_CONFIG" > '
+                                        '/etc/vault/vault-agent-config.hcl && '
+                                        'vault agent '
+                                        '-config=/etc/vault/vault-agent-config.hcl '
+                                        '-log-level=trace'],
+                               'command': ['/bin/sh', '-c'],
+                               'env': [{'name': 'VAULT_ADDR',
+                                        'value': 'https://vault.wildberries.ru:8200',
+                                        'value_from': None},
+                                       {'name': 'VAULT_SKIP_VERIFY',
+                                        'value': 'true',
+                                        'value_from': None},
+                                       {'name': 'VAULT_CONFIG',
+                                        'value': 'exit_after_auth = true\n'
+                                                 'pid_file = '
+                                                 '"/home/vault/pidfile"\n'
+                                                 '\n'
+                                                 'auto_auth {\n'
+                                                 '  method "kubernetes" {\n'
+                                                 '      mount_path = '
+                                                 '"auth/k8s.ml-infra-xc.vault-auth-per-cluster"\n'
+                                                 '      config = {\n'
+                                                 '          role = '
+                                                 '"recsys-lab"\n'
+                                                 '      }\n'
+                                                 '  }\n'
+                                                 '\n'
+                                                 '  sink "file" {\n'
+                                                 '      config = {\n'
+                                                 '          path = '
+                                                 '"/home/vault/.vault-token"\n'
+                                                 '      }\n'
+                                                 '  }\n'
+                                                 '}\n'
+                                                 'template {\n'
+                                                 'destination = '
+                                                 '"/etc/secrets/all"\n'
+                                                 'contents = <<EOT\n'
+                                                 '#!/bin/sh\n'
+                                                 '{{ with secret '
+                                                 '"services/recsys-lab/prd/fit-the-look" '
+                                                 '}}\n'
+                                                 'export '
+                                                 "CLICKHOUSE_PASSWORD='{{ "
+                                                 '.Data.CLICKHOUSE_PASSWORD '
+                                                 "}}'\n"
+                                                 "export CLICKHOUSE_USER='{{ "
+                                                 ".Data.CLICKHOUSE_USER }}'\n"
+                                                 "export GREENPLUM_HOST='{{ "
+                                                 ".Data.GREENPLUM_HOST }}'\n"
+                                                 'export '
+                                                 "GREENPLUM_PASSWORD='{{ "
+                                                 '.Data.GREENPLUM_PASSWORD '
+                                                 "}}'\n"
+                                                 "export GREENPLUM_USER='{{ "
+                                                 ".Data.GREENPLUM_USER }}'\n"
+                                                 "export S3_ACCESS_KEY='{{ "
+                                                 ".Data.S3_ACCESS_KEY }}'\n"
+                                                 "export S3_ENDPOINT_URL='{{ "
+                                                 ".Data.S3_ENDPOINT_URL }}'\n"
+                                                 'export '
+                                                 "S3_SECRET_ACCESS_KEY='{{ "
+                                                 '.Data.S3_SECRET_ACCESS_KEY '
+                                                 "}}'\n"
+                                                 "export TRITON_HOST='{{ "
+                                                 ".Data.TRITON_HOST }}'\n"
+                                                 'export '
+                                                 "TRITON_INPUT_DTYPE='{{ "
+                                                 '.Data.TRITON_INPUT_DTYPE '
+                                                 "}}'\n"
+                                                 "export TRITON_INPUT_NAME='{{ "
+                                                 ".Data.TRITON_INPUT_NAME }}'\n"
+                                                 "export TRITON_MODEL_NAME='{{ "
+                                                 ".Data.TRITON_MODEL_NAME }}'\n"
+                                                 'export '
+                                                 "TRITON_MODEL_VERSION='{{ "
+                                                 '.Data.TRITON_MODEL_VERSION '
+                                                 "}}'\n"
+                                                 'export '
+                                                 "TRITON_OUTPUT_NAMES='{{ "
+                                                 '.Data.TRITON_OUTPUT_NAMES '
+                                                 "}}'\n"
+                                                 "export TRITON_PORT='{{ "
+                                                 ".Data.TRITON_PORT }}'\n"
+                                                 'export '
+                                                 "IMAGE_EMBED_BATCH_SIZE='{{ "
+                                                 '.Data.IMAGE_EMBED_BATCH_SIZE '
+                                                 "}}'\n"
+                                                 'export '
+                                                 "IMAGE_EMBED_PICTURE_TYPE='{{ "
+                                                 '.Data.IMAGE_EMBED_PICTURE_TYPE '
+                                                 "}}'\n"
+                                                 '{{ end }}\n'
+                                                 'EOT\n'
+                                                 '}',
+                                        'value_from': None}],
+                               'env_from': None,
+                               'image': 'harbor.wildberries.ru/docker-hub-proxy/library/vault:1.8.1',
+                               'image_pull_policy': 'IfNotPresent',
+                               'lifecycle': None,
+                               'liveness_probe': None,
+                               'name': '001-vault-agent',
+                               'ports': None,
+                               'readiness_probe': None,
+                               'resources': {'limits': {'cpu': '4',
+                                                        'memory': '2Gi'},
+                                             'requests': {'cpu': '2',
+                                                          'memory': '1Gi'}},
+                               'security_context': {'allow_privilege_escalation': False,
+                                                    'capabilities': None,
+                                                    'privileged': None,
+                                                    'proc_mount': None,
+                                                    'read_only_root_filesystem': None,
+                                                    'run_as_group': None,
+                                                    'run_as_non_root': None,
+                                                    'run_as_user': None,
+                                                    'se_linux_options': None,
+                                                    'seccomp_profile': None,
+                                                    'windows_options': None},
+                               'startup_probe': None,
+                               'stdin': None,
+                               'stdin_once': None,
+                               'termination_message_path': '/dev/termination-log',
+                               'termination_message_policy': 'File',
+                               'tty': None,
+                               'volume_devices': None,
+                               'volume_mounts': [{'mount_path': '/etc/vault',
+                                                  'mount_propagation': None,
+                                                  'name': 'vault-config',
+                                                  'read_only': None,
+                                                  'sub_path': None,
+                                                  'sub_path_expr': None},
+                                                 {'mount_path': '/etc/secrets',
+                                                  'mount_propagation': None,
+                                                  'name': 'shared-data',
+                                                  'read_only': None,
+                                                  'sub_path': None,
+                                                  'sub_path_expr': None},
+                                                 {'mount_path': '/home/vault',
+                                                  'mount_propagation': None,
+                                                  'name': 'vault-home',
+                                                  'read_only': None,
+                                                  'sub_path': None,
+                                                  'sub_path_expr': None},
+                                                 {'mount_path': '/var/run/secrets/kubernetes.io/serviceaccount',
+                                                  'mount_propagation': None,
+                                                  'name': 'kube-api-access-jxnpl',
+                                                  'read_only': True,
+                                                  'sub_path': None,
+                                                  'sub_path_expr': None}],
+                               'working_dir': None}],
+          'node_name': 'ml-infrastructure-k8s-08.xc.wb.ru',
+          'node_selector': None,
+          'os': None,
+          'overhead': None,
+          'preemption_policy': 'PreemptLowerPriority',
+          'priority': 0,
+          'priority_class_name': None,
+          'readiness_gates': None,
+          'restart_policy': 'Never',
+          'runtime_class_name': None,
+          'scheduler_name': 'default-scheduler',
+          'security_context': {'fs_group': None,
+                               'fs_group_change_policy': None,
+                               'run_as_group': None,
+                               'run_as_non_root': None,
+                               'run_as_user': None,
+                               'se_linux_options': None,
+                               'seccomp_profile': None,
+                               'supplemental_groups': None,
+                               'sysctls': None,
+                               'windows_options': None},
+          'service_account': 'vault-auth',
+          'service_account_name': 'vault-auth',
+          'set_hostname_as_fqdn': None,
+          'share_process_namespace': None,
+          'subdomain': None,
+          'termination_grace_period_seconds': 30,
+          'tolerations': [{'effect': 'NoExecute',
+                           'key': 'node.kubernetes.io/not-ready',
+                           'operator': 'Exists',
+                           'toleration_seconds': 300,
+                           'value': None},
+                          {'effect': 'NoExecute',
+                           'key': 'node.kubernetes.io/unreachable',
+                           'operator': 'Exists',
+                           'toleration_seconds': 300,
+                           'value': None}],
+          'topology_spread_constraints': None,
+          'volumes': [{'aws_elastic_block_store': None,
+                       'azure_disk': None,
+                       'azure_file': None,
+                       'cephfs': None,
+                       'cinder': None,
+                       'config_map': None,
+                       'csi': None,
+                       'downward_api': None,
+                       'empty_dir': {'medium': None, 'size_limit': '256Mi'},
+                       'ephemeral': None,
+                       'fc': None,
+                       'flex_volume': None,
+                       'flocker': None,
+                       'gce_persistent_disk': None,
+                       'git_repo': None,
+                       'glusterfs': None,
+                       'host_path': None,
+                       'iscsi': None,
+                       'name': 'shared-data',
+                       'nfs': None,
+                       'persistent_volume_claim': None,
+                       'photon_persistent_disk': None,
+                       'portworx_volume': None,
+                       'projected': None,
+                       'quobyte': None,
+                       'rbd': None,
+                       'scale_io': None,
+                       'secret': None,
+                       'storageos': None,
+                       'vsphere_volume': None},
+                      {'aws_elastic_block_store': None,
+                       'azure_disk': None,
+                       'azure_file': None,
+                       'cephfs': None,
+                       'cinder': None,
+                       'config_map': None,
+                       'csi': None,
+                       'downward_api': None,
+                       'empty_dir': {'medium': None, 'size_limit': '256Mi'},
+                       'ephemeral': None,
+                       'fc': None,
+                       'flex_volume': None,
+                       'flocker': None,
+                       'gce_persistent_disk': None,
+                       'git_repo': None,
+                       'glusterfs': None,
+                       'host_path': None,
+                       'iscsi': None,
+                       'name': 'vault-config',
+                       'nfs': None,
+                       'persistent_volume_claim': None,
+                       'photon_persistent_disk': None,
+                       'portworx_volume': None,
+                       'projected': None,
+                       'quobyte': None,
+                       'rbd': None,
+                       'scale_io': None,
+                       'secret': None,
+                       'storageos': None,
+                       'vsphere_volume': None},
+                      {'aws_elastic_block_store': None,
+                       'azure_disk': None,
+                       'azure_file': None,
+                       'cephfs': None,
+                       'cinder': None,
+                       'config_map': None,
+                       'csi': None,
+                       'downward_api': None,
+                       'empty_dir': {'medium': None, 'size_limit': '256Mi'},
+                       'ephemeral': None,
+                       'fc': None,
+                       'flex_volume': None,
+                       'flocker': None,
+                       'gce_persistent_disk': None,
+                       'git_repo': None,
+                       'glusterfs': None,
+                       'host_path': None,
+                       'iscsi': None,
+                       'name': 'vault-home',
+                       'nfs': None,
+                       'persistent_volume_claim': None,
+                       'photon_persistent_disk': None,
+                       'portworx_volume': None,
+                       'projected': None,
+                       'quobyte': None,
+                       'rbd': None,
+                       'scale_io': None,
+                       'secret': None,
+                       'storageos': None,
+                       'vsphere_volume': None},
+                      {'aws_elastic_block_store': None,
+                       'azure_disk': None,
+                       'azure_file': None,
+                       'cephfs': None,
+                       'cinder': None,
+                       'config_map': None,
+                       'csi': None,
+                       'downward_api': None,
+                       'empty_dir': None,
+                       'ephemeral': None,
+                       'fc': None,
+                       'flex_volume': None,
+                       'flocker': None,
+                       'gce_persistent_disk': None,
+                       'git_repo': None,
+                       'glusterfs': None,
+                       'host_path': None,
+                       'iscsi': None,
+                       'name': 'kube-api-access-jxnpl',
+                       'nfs': None,
+                       'persistent_volume_claim': None,
+                       'photon_persistent_disk': None,
+                       'portworx_volume': None,
+                       'projected': {'default_mode': 420,
+                                     'sources': [{'config_map': None,
+                                                  'downward_api': None,
+                                                  'secret': None,
+                                                  'service_account_token': {'audience': None,
+                                                                            'expiration_seconds': 3607,
+                                                                            'path': 'token'}},
+                                                 {'config_map': {'items': [{'key': 'ca.crt',
+                                                                            'mode': None,
+                                                                            'path': 'ca.crt'}],
+                                                                 'name': 'kube-root-ca.crt',
+                                                                 'optional': None},
+                                                  'downward_api': None,
+                                                  'secret': None,
+                                                  'service_account_token': None},
+                                                 {'config_map': None,
+                                                  'downward_api': {'items': [{'field_ref': {'api_version': 'v1',
+                                                                                            'field_path': 'metadata.namespace'},
+                                                                              'mode': None,
+                                                                              'path': 'namespace',
+                                                                              'resource_field_ref': None}]},
+                                                  'secret': None,
+                                                  'service_account_token': None}]},
+                       'quobyte': None,
+                       'rbd': None,
+                       'scale_io': None,
+                       'secret': None,
+                       'storageos': None,
+                       'vsphere_volume': None}]},
+ 'status': {'conditions': [{'last_probe_time': None,
+                            'last_transition_time': datetime.datetime(2026, 2, 16, 11, 37, 13, tzinfo=tzutc()),
+                            'message': None,
+                            'reason': None,
+                            'status': 'True',
+                            'type': 'Initialized'},
+                           {'last_probe_time': None,
+                            'last_transition_time': datetime.datetime(2026, 2, 16, 12, 26, 4, tzinfo=tzutc()),
+                            'message': None,
+                            'reason': 'PodFailed',
+                            'status': 'False',
+                            'type': 'Ready'},
+                           {'last_probe_time': None,
+                            'last_transition_time': datetime.datetime(2026, 2, 16, 12, 26, 4, tzinfo=tzutc()),
+                            'message': None,
+                            'reason': 'PodFailed',
+                            'status': 'False',
+                            'type': 'ContainersReady'},
+                           {'last_probe_time': None,
+                            'last_transition_time': datetime.datetime(2026, 2, 16, 11, 37, 11, tzinfo=tzutc()),
+                            'message': None,
+                            'reason': None,
+                            'status': 'True',
+                            'type': 'PodScheduled'}],
+            'container_statuses': [{'container_id': 'containerd://c124762861e05351f87f62a2a0cdda1ee43b8b857e85ac8f762ed3859852faee',
+                                    'image': 'harbor.wildberries.ru/recommendation/recommendation/recsys-lab/fit-the-look/fit-the-look:v0-0-2-bff12b7d',
+                                    'image_id': 'harbor.wildberries.ru/recommendation/recommendation/recsys-lab/fit-the-look/fit-the-look@sha256:252be034a30a9d5f55efdb0e099e1f5e143676254d8627bb449ca39fc2624308',
+                                    'last_state': {'running': None,
+                                                   'terminated': None,
+                                                   'waiting': None},
+                                    'name': 'base',
+                                    'ready': False,
+                                    'restart_count': 0,
+                                    'started': False,
+                                    'state': {'running': None,
+                                              'terminated': {'container_id': 'containerd://c124762861e05351f87f62a2a0cdda1ee43b8b857e85ac8f762ed3859852faee',
+                                                             'exit_code': 2,
+                                                             'finished_at': datetime.datetime(2026, 2, 16, 12, 26, 3, tzinfo=tzutc()),
+                                                             'message': None,
+                                                             'reason': 'Error',
+                                                             'signal': None,
+                                                             'started_at': datetime.datetime(2026, 2, 16, 11, 37, 13, tzinfo=tzutc())},
+                                              'waiting': None}}],
+            'ephemeral_container_statuses': None,
+            'host_ip': '10.49.24.106',
+            'init_container_statuses': [{'container_id': 'containerd://86b87459e9a3a28b3785eae40955d3eda23001b14d43255d7fed708789c7c181',
+                                         'image': 'harbor.wildberries.ru/docker-hub-proxy/library/vault:1.8.1',
+                                         'image_id': 'harbor.wildberries.ru/docker-hub-proxy/library/vault@sha256:17c8fb627a230a25d2ca1073ee501b4dfd5deda47ea811ac101a989666c00170',
+                                         'last_state': {'running': None,
+                                                        'terminated': None,
+                                                        'waiting': None},
+                                         'name': '001-vault-agent',
+                                         'ready': True,
+                                         'restart_count': 0,
+                                         'started': None,
+                                         'state': {'running': None,
+                                                   'terminated': {'container_id': 'containerd://86b87459e9a3a28b3785eae40955d3eda23001b14d43255d7fed708789c7c181',
+                                                                  'exit_code': 0,
+                                                                  'finished_at': datetime.datetime(2026, 2, 16, 11, 37, 12, tzinfo=tzutc()),
+                                                                  'message': None,
+                                                                  'reason': 'Completed',
+                                                                  'signal': None,
+                                                                  'started_at': datetime.datetime(2026, 2, 16, 11, 37, 11, tzinfo=tzutc())},
+                                                   'waiting': None}}],
+            'message': None,
+            'nominated_node_name': None,
+            'phase': 'Failed',
+            'pod_i_ps': [{'ip': '172.20.94.204'}],
+            'pod_ip': '172.20.94.204',
+            'qos_class': 'Burstable',
+            'reason': None,
+            'start_time': datetime.datetime(2026, 2, 16, 11, 37, 11, tzinfo=tzutc())}}; 40563)
+[2026-02-16T15:26:07.637+0300] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2026-02-16T15:26:07.665+0300] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
